@@ -1,5 +1,3 @@
-# 🧵 Skein
-
 <p align="center">
   <img src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC" width="720" />
 </p>
@@ -115,7 +113,7 @@ Skein is therefore **not another coding agent**. It is the engineering layer aro
 
 ---
 
-# 🧵 Why Skein?
+# Why Skein?
 
 Without a persistent engineering context, every agent tends to reconstruct its own view of the system:
 
@@ -1041,7 +1039,7 @@ Skein is built for that transition.
 
 ---
 
-# 🧵 Skein
+# Skein
 
 <p align="center">
   <strong>The Continuous Thread of AI-DLC</strong><br/>
