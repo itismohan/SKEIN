@@ -1,31 +1,327 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Skein — The Continuous Thread of AI-DLC"><title>Skein — The Continuous Thread of AI-DLC</title><link rel="icon" href="assets/skein-logo.png"><link rel="stylesheet" href="styles.css"></head><body><div class="progress"></div><header><a class="brand" href="#top"><img src="assets/skein-logo.png">SKEIN</a><nav><a href="#why">Why</a><a href="#capabilities">Capabilities</a><a href="#architecture">Architecture</a><a href="#mcp">MCP</a><a href="#workflows">Workflows</a><a href="#roadmap">Roadmap</a></nav><a class="gh" href="https://github.com/itismohan/Skein">GitHub ↗</a></header><main id="top">
-<section class="hero"><div class="copy"><label>● v1.0.0 · AI-DLC CONTROL PLANE</label><h1>The Continuous<br><em>Thread</em> of AI-DLC.</h1><p>Skein connects engineering knowledge, agent context, communication, traceability, governance and evidence across the AI-driven software lifecycle.</p><div class="actions"><a class="btn" href="#quickstart">Start in 30 seconds →</a><a class="btn ghost" href="https://github.com/itismohan/Skein">Explore GitHub</a></div><div class="stats"><b>78/78<small>tests passing</small></b><b>MCP<small>stdio + HTTP</small></b><b>v1.0<small>control plane</small></b></div></div><div class="orb"><div class="ring r1"></div><div class="ring r2"></div><div class="core"><strong>SKEIN</strong><small>ONE STRAND · END TO END</small></div><i>GRAPH</i><i>CONTEXT</i><i>AGENTS</i><i>EVIDENCE</i></div></section>
-<section id="quickstart" class="quick"><label>01 · 30 SECOND QUICK START</label><div><div><h2>Give your agents<br><span>a persistent engineering context.</span></h2><p>Install Skein, build the graph, expose it through MCP, and connect your existing AI workflow.</p></div><pre><button onclick="copy('q')">Copy</button><code id="q">git clone https://github.com/itismohan/Skein.git
-cd Skein
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbff">
+  <meta name="description" content="Skein — the continuous thread of AI-DLC. Persistent engineering context, governed agent execution, traceability and evidence.">
+  <title>Skein — The Continuous Thread of AI-DLC</title>
+  <link rel="preload" href="assets/skein-logo.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Skein home">
+        <img src="assets/skein-mark.png" alt="" class="brand-mark">
+        <span>Skein</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a class="active" href="#top">Home</a>
+        <a href="#why">Why Skein</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#quickstart">Get Started</a>
+        <a href="#docs">Docs</a>
+        <a href="https://github.com/itismohan/SKEIN" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="nav-cta" href="#quickstart">Get Started <span>→</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-wash wash-a"></div>
+      <div class="hero-wash wash-b"></div>
+      <div class="hero-strand strand-left"></div>
+      <div class="hero-strand strand-right"></div>
+
+      <div class="shell hero-inner">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> AI-DLC CONTROL PLANE · v1.0.0</div>
+
+        <div class="hero-logo-wrap">
+          <div class="logo-glow"></div>
+          <img class="hero-logo" src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC">
+        </div>
+
+        <p class="hero-copy">
+          The governed, persistent <strong>context and evidence layer</strong> for AI-driven software development.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#quickstart">Get Started in 30 Seconds <span>→</span></a>
+          <a class="btn btn-secondary" href="https://github.com/itismohan/SKEIN" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.5-.29-5.13-1.25-5.13-5.58 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44.11-3 0 0 .95-.31 3.08 1.16a10.65 10.65 0 0 1 5.6 0c2.13-1.47 3.08-1.16 3.08-1.16.61 1.56.23 2.71.11 3 .72.79 1.16 1.8 1.16 3.03 0 4.34-2.64 5.29-5.15 5.57.4.35.75 1.04.75 2.1v3.12c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <div class="status-bar">
+          <div><span class="status-icon blue">✦</span><strong>v1.0.0</strong><small>Latest release</small></div>
+          <div><span class="status-icon green">✓</span><strong>78/78</strong><small>Tests passing</small></div>
+          <div><span class="status-icon violet">⌘</span><strong>Graph Schema 1.0.0</strong><small>Stable contract</small></div>
+          <div><span class="status-icon pink">◈</span><strong>MCP</strong><small>stdio + HTTP</small></div>
+          <div><span class="status-icon orange">Py</span><strong>Python 3.10+</strong><small>Open source</small></div>
+          <div><span class="status-icon mint">⚖</span><strong>MIT</strong><small>Open source</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-section" id="why">
+      <div class="shell why-grid">
+        <div class="why-intro reveal">
+          <span class="section-kicker">THE PROBLEM</span>
+          <h2>Why <span class="gradient-text">Skein?</span></h2>
+          <p>AI agents are powerful, but without context, traceability and governance, they create risk.</p>
+          <p>Skein connects <strong>specifications, knowledge, agents, execution, quality and evidence</strong> across the AI-driven software development lifecycle.</p>
+          <a class="text-link" href="#capabilities">Explore the capabilities <span>→</span></a>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal">
+            <div class="benefit-icon icon-pink">▤</div>
+            <div><h3>Persistent Context</h3><p>A living engineering knowledge graph that evolves with your system.</p></div>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon icon-blue">⚙</div>
+            <div><h3>Agent Execution</h3><p>Provider-neutral execution with full traceability and evidence.</p></div>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon icon-violet">♢</div>
+            <div><h3>Governance by Design</h3><p>Policy enforcement, approvals and audit-ready evidence.</p></div>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon icon-cyan">↗</div>
+            <div><h3>Measurable Outcomes</h3><p>Quality evaluation, experimentation and continuous improvement.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capabilities" id="capabilities">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <span class="section-kicker">ONE CONTINUOUS THREAD</span>
+          <h2>Everything agents need.<br><span class="gradient-text">Nothing they should forget.</span></h2>
+          <p>Skein is the durable engineering layer underneath your agents — independent of model, provider or IDE.</p>
+        </div>
+
+        <div class="cap-grid">
+          <article class="cap-card cap-large reveal">
+            <div class="cap-number">01</div>
+            <div class="cap-icon cyan">◎</div>
+            <h3>Engineering Knowledge Graph</h3>
+            <p>Ingest source, specifications and engineering artifacts into a versioned graph with structural relationships and traceability.</p>
+            <div class="mini-tags"><span>AST</span><span>Tree-sitter</span><span>NetworkX</span><span>Versioned</span></div>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-number">02</div>
+            <div class="cap-icon violet">⌁</div>
+            <h3>Adaptive Context</h3>
+            <p>Budget-aware graph evidence selection using relevance, connectivity, diversity and bounded feedback.</p>
+            <div class="mini-tags"><span>Budget-aware</span><span>Evidence</span></div>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-number">03</div>
+            <div class="cap-icon pink">◌</div>
+            <h3>Agent Communication</h3>
+            <p>MCP-compatible tools provide a stable boundary between agents and durable engineering context.</p>
+            <div class="mini-tags"><span>MCP</span><span>stdio</span><span>HTTP</span></div>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-number">04</div>
+            <div class="cap-icon orange">↻</div>
+            <h3>Autonomous Quality Loop</h3>
+            <p>Task → Select → Execute → Observe → Evaluate → Learn → Re-select → Retry.</p>
+            <div class="mini-tags"><span>Bounded</span><span>Evaluated</span></div>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-number">05</div>
+            <div class="cap-icon blue">◈</div>
+            <h3>Governed Control Plane</h3>
+            <p>Lifecycle state, RBAC, SDD preflight, risk, human approval and immutable evidence export.</p>
+            <div class="mini-tags"><span>RBAC</span><span>Policy</span><span>Audit</span></div>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-number">06</div>
+            <div class="cap-icon mint">✓</div>
+            <h3>Evaluation & Evidence</h3>
+            <p>Matched baseline/Skein measurements, deterministic confidence intervals and evidence grades.</p>
+            <div class="mini-tags"><span>A–D grades</span><span>Evidence</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section control-section" id="control-plane">
+      <div class="shell control-card">
+        <div class="control-copy reveal">
+          <span class="section-kicker">AI-DLC CONTROL PLANE</span>
+          <h2>A lifecycle you can <span class="gradient-text">trust.</span></h2>
+          <p>Skein turns an agentic workflow into a governed engineering process with explicit state transitions and evidence.</p>
+          <ol class="control-list">
+            <li><span class="step-dot blue">1</span><div><b>Specify</b><small>Connect requirements, code and tests.</small></div></li>
+            <li><span class="step-dot violet">2</span><div><b>Plan</b><small>Select context and define execution.</small></div></li>
+            <li><span class="step-dot pink">3</span><div><b>Execute</b><small>Run agents with guardrails.</small></div></li>
+            <li><span class="step-dot mint">4</span><div><b>Evaluate</b><small>Verify quality and capture evidence.</small></div></li>
+            <li><span class="step-dot orange">5</span><div><b>Approve</b><small>Human-in-the-loop governance.</small></div></li>
+            <li><span class="step-dot cyan">6</span><div><b>Finalize</b><small>Immutable evidence and traceability.</small></div></li>
+          </ol>
+        </div>
+        <div class="lifecycle-visual reveal">
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit-core">
+            <img src="assets/skein-mark.png" alt="">
+            <strong>Skein</strong>
+            <small>AI-DLC CONTROL PLANE</small>
+          </div>
+          <div class="orbit-node node-spec">Specify</div>
+          <div class="orbit-node node-plan">Plan</div>
+          <div class="orbit-node node-execute">Execute</div>
+          <div class="orbit-node node-evaluate">Evaluate</div>
+          <div class="orbit-node node-approve">Approve</div>
+          <div class="orbit-node node-finalize">Finalize</div>
+        </div>
+        <div class="quick-card reveal" id="quickstart">
+          <span class="section-kicker">30-SECOND QUICK START</span>
+          <h3>Get Skein running locally.</h3>
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="install">Install</button>
+            <button class="tab" data-tab="mcp">MCP</button>
+            <button class="tab" data-tab="dashboard">Dashboard</button>
+          </div>
+          <div class="code-panel">
+            <div class="code-head"><span>terminal</span><button class="copy-btn" data-copy-target="install-code">Copy</button></div>
+            <pre id="install-code"><code>git clone https://github.com/itismohan/SKEIN.git
+cd SKEIN
+
 python -m venv .venv
 source .venv/bin/activate
-pip install -e '.[dev]'
+pip install -e .
+
 skein init .
 skein ingest .
-skein mcp-stdio .</code></pre></div></section>
-<section id="why"><label>02 · WHY SKEIN</label><div class="two"><h2>AI can generate<br><span>faster than teams can govern.</span></h2><div><p class="large">Agents can read files, write code, call tools and run tests. Engineering decisions also depend on intent, dependencies, history, verification, risk, approvals and evidence.</p><p>Skein keeps those signals connected, so every agent does not have to reconstruct the engineering system from scratch.</p></div></div><div class="flow"><b>Requirements</b>→<b>Code</b>→<b>Tests</b>→<b>Agents</b>→<b>CI/CD</b></div><div class="answers"><p>WITHOUT SKEIN <strong>Agent → Repository → Guess → Generate → Hope</strong></p><p>WITH SKEIN <strong>Context → Execute → Observe → Evaluate → Govern → Evidence</strong></p></div></section>
-<section id="capabilities"><label>03 · CAPABILITIES</label><div class="head"><h2>One thread.<br><span>Many engineering capabilities.</span></h2><p>Skein is not another coding agent. It is the persistent layer around agents.</p></div><div class="cards"><article><b>◈</b><h3>Engineering Graph</h3><p>Queryable relationships across files, functions, classes, requirements and tests.</p><small>CALLS · IMPORTS · TESTS · JUSTIFIES</small></article><article><b>⌁</b><h3>Adaptive Context</h3><p>Select task-specific engineering evidence using relevance, connectivity, diversity and budget.</p><small>RELEVANCE · CONNECTIVITY · BUDGET</small></article><article><b>⇄</b><h3>Agent Communication</h3><p>Give specialized agents a shared engineering context without rebuilding the system model.</p><small>PLANNER · DEV · TEST · REVIEW</small></article><article><b>◎</b><h3>Traceability</h3><p>Connect specification, implementation and verification across the lifecycle.</p><small>SPEC → CODE → TEST → EVIDENCE</small></article><article><b>↻</b><h3>Autonomous Quality Loop</h3><p>Task, select, execute, observe, evaluate, learn and retry with bounded iterations.</p><small>EXECUTE ≠ SUCCESS</small></article><article><b>⌘</b><h3>AI-DLC Control Plane</h3><p>Lifecycle, policy, RBAC, SDD preflight, quality gates, approval and evidence integrity.</p><small>PLAN · APPROVE · FINALIZE</small></article><article><b>⬡</b><h3>MCP Boundary</h3><p>Expose engineering context to compatible AI clients over stdio or HTTP.</p><small>QUERY · TRACE · DIFF · PROPOSE</small></article><article><b>▣</b><h3>Evidence & Measurement</h3><p>Capture execution and quality signals so AI engineering claims can be measured.</p><small>QUALITY · COST · LATENCY · REWORK</small></article></div></section>
-<section id="architecture"><label>04 · ARCHITECTURE</label><div class="center"><h2>The engineering thread<br><span>underneath the AI stack.</span></h2><p>Keep clients, models and orchestration replaceable. Keep engineering context continuous.</p></div><div class="arch"><div class="layer"><small>AI / DEVELOPER CLIENTS</small><div>AI IDEs · CODING AGENTS · QA AGENTS · REVIEW AGENTS · CLI</div></div><div class="connector">MCP</div><div class="layer skein"><small>SKEIN · AI-DLC ENGINEERING LAYER</small><div class="agrid"><b>Engineering Graph<small>Knowledge · history · relationships</small></b><b>Context Intelligence<small>Selection · compression · budget</small></b><b>Agent Execution<small>Providers · adapters · telemetry</small></b><b>Traceability<small>Specification · implementation · tests</small></b><b class="wide">AI-DLC CONTROL PLANE<small>Lifecycle · policy · RBAC · quality gates · approval · evidence integrity</small></b></div></div><div class="connector">Evidence</div><div class="layer"><small>ENGINEERING SYSTEM</small><div>CODE · TESTS · CI/CD · SPECS · ADRs · REPOSITORIES</div></div></div><div class="lifecycle"><small>AI-DLC LIFECYCLE · bounded · observable · governable</small><div>CREATED → PLANNED → <b>EXECUTING</b> → EVALUATING → APPROVAL → COMPLETED</div></div><img class="gif" src="assets/skein-ai-dlc-lifecycle.gif" alt="Skein AI-DLC lifecycle animation"></section>
-<section id="mcp"><label>05 · MCP + IDE</label><div class="two"><div><h2>Bring Skein<br><span>into your existing agent.</span></h2><p>Skein exposes graph and lifecycle capabilities through an MCP-compatible boundary. Your IDE remains the experience; your agent remains the reasoning interface.</p><div class="tools">query_graph · get_subgraph · get_traceability · get_diff · propose_node · commit_proposal</div></div><div class="code"><small>STDIO</small><pre>skein mcp-stdio .</pre><small>HTTP</small><pre>skein mcp-http . --host 127.0.0.1 --port 8765</pre><small>VS CODE · .vscode/mcp.json</small><pre>{
-  "servers": {
-    "skein": {
-      "type": "stdio",
-      "command": "skein",
-      "args": ["mcp-stdio", "${workspaceFolder}"]
-    }
-  }
-}</pre></div></div></section>
-<section id="workflows"><label>06 · WORKFLOWS</label><div class="tabs"><button class="on" data-x="green">GREENFIELD</button><button data-x="brown">BROWNFIELD</button></div><div id="green" class="wf on"><div><h2>Build the thread<br><span>as the system grows.</span></h2><p>Start with a vertical slice. Connect specification, implementation and tests. Expand the graph as evidence accumulates.</p><ol><li>Define bounded specification</li><li>Implement a vertical slice</li><li>Ingest the repository</li><li>Select task context</li><li>Execute and evaluate</li><li>Approve and export evidence</li></ol></div><pre>skein init .
-skein spec-check .
-skein ingest .
-skein query . "checkout"
-skein trace . --spec SKN-001
-skein dashboard .</pre></div><div id="brown" class="wf"><div><h2>Understand before<br><span>you change legacy.</span></h2><p>Characterize existing behavior before treating it as intent. Bound the change and preserve evidence.</p><ol><li>Ingest existing repository</li><li>Build and review graph</li><li>Characterize behavior</li><li>Establish trust boundaries</li><li>Define bounded change</li><li>Verify and approve</li></ol></div><aside><small>CORE PRINCIPLE</small><strong>Observed behavior<br>≠ business intent</strong><p>Do not accidentally turn legacy behavior into a new requirement.</p></aside></div></section>
-<section><label>07 · ECOSYSTEM</label><div class="center"><h2>Skein doesn't replace<br><span>the AI ecosystem. It connects it.</span></h2></div><div class="eco"><div>AI IDEs<br>LangGraph<br>CrewAI<br>AutoGen</div><strong>SKEIN<br><small>ENGINEERING<br>THREAD</small></strong><div>LlamaIndex<br>Vector DBs<br>Tree-sitter<br>MCP Clients</div></div><div class="table"><p><b>Technology</b><b>Focus</b><b>Skein relationship</b></p><p><span>LangGraph</span><span>Agent orchestration</span><strong>Complementary</strong></p><p><span>LlamaIndex</span><span>Data / RAG</span><strong>Complementary</strong></p><p><span>MCP</span><span>Tool interoperability</span><strong>Integration boundary</strong></p><p><span>Tree-sitter</span><span>Source parsing</span><strong>Ingestion building block</strong></p><p><span>Skein</span><span>Context + traceability + governance + evidence</span><strong>Continuous layer</strong></p></div></section>
-<section id="roadmap"><label>08 · STATUS + ROADMAP</label><div class="head"><h2>Built for the next<br><span>generation of engineering.</span></h2></div><div class="status"><b>v1.0.0<small>AI-DLC Control Plane</small></b><b>78/78<small>automated tests</small></b><b>MCP<small>stdio + HTTP</small></b><b>Adaptive<small>context intelligence</small></b></div><div class="road"><article><small>NOW</small><h3>v1.0</h3><p>Control Plane, governance, quality gates, approval and evidence.</p></article><article><small>NEXT</small><h3>v1.1</h3><p>Enterprise integrations, PR workflows, CI/CD gates, identity and federation.</p></article><article><small>BEYOND</small><h3>Scale</h3><p>Production feedback, richer adapters and multi-project governance.</p></article></div></section>
-<section class="close"><label>THE SKEIN THESIS</label><h2>AI agents should be replaceable.<br><em>Engineering context should not.</em></h2><p>Requirements. Code. Tests. Decisions. Agent actions. Quality signals. Approvals. Evidence.</p><strong>ONE STRAND. END TO END.</strong><div class="actions"><a class="btn" href="https://github.com/itismohan/Skein">View the project ↗</a></div></section></main><footer><b>🧵 SKEIN</b><span>The Continuous Thread of AI-DLC · MIT · v1.0.0 · Open Source</span></footer><script src="script.js"></script></body></html>
+skein dashboard .</code></pre>
+          </div>
+          <div class="success-note">✓ Open <b>.skein/dashboard.html</b> in your browser.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section architecture-section" id="architecture">
+      <div class="shell">
+        <div class="section-heading centered reveal">
+          <span class="section-kicker">ARCHITECTURE</span>
+          <h2>The <span class="gradient-text">Skein architecture.</span></h2>
+          <p>A unified layer connecting developers, agents and systems.</p>
+        </div>
+
+        <div class="architecture reveal">
+          <div class="arch-layer arch-top">
+            <span class="layer-label">PEOPLE &amp; EXPERIENCE</span>
+            <div class="arch-nodes"><div>Developers</div><div>Architects</div><div>Quality</div><div>Governance</div></div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer arch-agents">
+            <span class="layer-label">AGENT ECOSYSTEM</span>
+            <div class="arch-nodes"><div>AI Coding Agents</div><div>QA Agents</div><div>Custom Agents</div><div>Provider SDKs</div></div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer arch-skein">
+            <span class="layer-label">SKEIN · THE CONTINUOUS THREAD</span>
+            <div class="skein-services">
+              <div><b>Knowledge Graph</b><small>Context · Traceability</small></div>
+              <div><b>Context Intelligence</b><small>Selection · Compression</small></div>
+              <div><b>Agent Gateway</b><small>MCP · Connectors</small></div>
+              <div><b>Control Plane</b><small>Policy · Approval</small></div>
+              <div><b>Evidence Engine</b><small>Evaluation · Audit</small></div>
+            </div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-layer arch-bottom">
+            <span class="layer-label">ENGINEERING SYSTEMS</span>
+            <div class="arch-nodes"><div>Source Code</div><div>Specifications</div><div>CI/CD</div><div>Telemetry</div><div>Artifacts</div></div>
+          </div>
+        </div>
+
+        <div class="metric-strip reveal">
+          <div><b>60+</b><span>Python modules</span></div>
+          <div><b>8/8</b><span>SDD clauses valid</span></div>
+          <div><b>100%</b><span>Security scans passed</span></div>
+          <div><b>MVP</b><span>Certification ready</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ecosystem-section" id="docs">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <span class="section-kicker">ECOSYSTEM FIT</span>
+          <h2>Not another agent framework.<br><span class="gradient-text">The layer beneath them.</span></h2>
+          <p>Skein complements the tools teams already use instead of asking them to replace their agent stack.</p>
+        </div>
+        <div class="ecosystem-grid reveal">
+          <div class="eco-card central"><span class="eco-badge">SKEIN</span><h3>Persistent context + governance</h3><p>Graph · Trace · Agent Communication · Evidence</p></div>
+          <div class="eco-card"><b>LangGraph</b><span>Agent orchestration</span></div>
+          <div class="eco-card"><b>CrewAI</b><span>Multi-agent workflows</span></div>
+          <div class="eco-card"><b>AutoGen</b><span>Agent conversations</span></div>
+          <div class="eco-card"><b>LlamaIndex</b><span>Data &amp; retrieval</span></div>
+          <div class="eco-card"><b>Vector DBs</b><span>Semantic retrieval</span></div>
+          <div class="eco-card"><b>Tree-sitter</b><span>Code structure</span></div>
+          <div class="eco-card"><b>MCP</b><span>Tool connectivity</span></div>
+          <div class="eco-card"><b>AI IDEs</b><span>Developer experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section governance">
+      <div class="shell governance-panel reveal">
+        <div>
+          <span class="section-kicker">GOVERNANCE BY DESIGN</span>
+          <h2>AI agents should be <span class="gradient-text">replaceable.</span><br>Engineering context should not.</h2>
+        </div>
+        <div class="governance-points">
+          <div><span>01</span><p><b>Provider-neutral</b><br>Swap models and agents without losing engineering history.</p></div>
+          <div><span>02</span><p><b>Evidence-first</b><br>Every important action can be connected to context and outcomes.</p></div>
+          <div><span>03</span><p><b>Human-governed</b><br>Risk and approval remain explicit control points.</p></div>
+          <div><span>04</span><p><b>Open by default</b><br>Local-first, inspectable and designed for extensibility.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="shell final-card reveal">
+        <div class="final-orb"></div>
+        <img src="assets/skein-logo.png" alt="Skein" class="final-logo">
+        <h2>Build with the <span class="gradient-text">continuous thread.</span></h2>
+        <p>Start local. Connect your agents. Keep the context.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#quickstart">Get Started <span>→</span></a>
+          <a class="btn btn-secondary" href="https://github.com/itismohan/SKEIN" target="_blank" rel="noreferrer">Star on GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/skein-mark.png" alt="">
+        <div><strong>Skein</strong><small>The Continuous Thread of AI-DLC</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="#why">Why Skein</a><a href="#capabilities">Capabilities</a><a href="#architecture">Architecture</a><a href="#quickstart">Get Started</a>
+        <a href="https://github.com/itismohan/SKEIN" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <p>© <span id="year"></span> Skein · MIT License</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
