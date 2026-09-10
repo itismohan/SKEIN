@@ -146,8 +146,8 @@ Skein is built as a sequence of complementary layers rather than a single monoli
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│                    AI-DLC / Engineering Agents              │
-│ Planner · Coder · Tester · Reviewer · Other Agents          │
+│                    AI-DLC / Engineering Agents               │
+│ Planner · Coder · Tester · Reviewer · Other Agents           │
 └──────────────────────────────┬───────────────────────────────┘
                                │
                          Agent Communication
@@ -158,7 +158,7 @@ Skein is built as a sequence of complementary layers rather than a single monoli
 └──────────────────────────────┬───────────────────────────────┘
                                │
 ┌──────────────────────────────▼───────────────────────────────┐
-│                    Engineering Graph                        │
+│                    Engineering Graph                         │
 │ Files · Functions · Classes · Requirements · Tickets         │
 │ ADRs · Tests · Calls · Imports · Tests · Justifications      │
 └──────────────────────────────┬───────────────────────────────┘
@@ -523,112 +523,6 @@ Usage
 The purpose is not merely cost reporting. Cost can be evaluated alongside **quality, latency, rework and outcome**.
 
 ---
-
-# Current status
-
-## v0.6.0 — Experimental Control Plane
-
-**Status: Release candidate / validated local implementation**
-
-Implemented across the Skein roadmap:
-
-- Stage 0 — project setup and scaffolding
-- Stage 1 — ingestion and graph construction
-- Stage 2 — versioned store and diffing
-- Stage 3 — verified compression
-- Stage 4 — shared-agent MCP protocol
-- Stage 5 — dashboard and governance
-- Stage 6 — hardening, packaging and release
-- v0.3 — pilot intelligence
-- v0.4 — agent connector layer
-- v0.5 — evaluation and evidence engine
-- **v0.6 — experimental control plane**
-- **v0.7 — real agent execution & adapters**
-
-The software version and graph schema version are independent:
-
-```text
-Skein software: 0.7.0
-Graph schema:   1.0.0
-```
-
-See the release documentation under `docs/` for implementation-specific details.
-
----
-
-# Roadmap
-
-Skein's next phase is deliberately focused on proving value with real agent workflows rather than adding features for their own sake.
-
-### v0.7 — Real Agent Execution & Adapters
-
-**Current milestone.** v0.7 connects the v0.6 experiment protocol to real command-line agent workflows. The first adapter is deliberately provider-neutral: any agent that can be invoked as an explicit argv command can participate without giving Skein shell interpretation privileges.
-
-- controlled Baseline/Skein execution
-- assignment enforcement
-- task + context injection through a deterministic environment envelope
-- automatic execution telemetry
-- task/context/command fingerprints
-- timeout and process-failure capture
-- evaluation-compatible results
-- provider-specific SDKs can continue using the v0.4 connector layer
-- concrete OpenAI and Anthropic provider execution bridges with normalized telemetry
-
-Example:
-
-```bash
-skein experiment-init . --experiment-id commerce-pilot --seed 42
-skein experiment-add-task . --task-id T1 --description "what calls checkout?"
-skein experiment-assign .
-
-skein agent-run . --task-id T1 --arm baseline \
-  --command-json '["python","agent.py"]'
-
-skein agent-run . --task-id T2 --arm skein \
-  --command-json '["python","agent.py"]' \
-  --context-query 'what calls checkout?'
-
-skein agent-status .
-skein evaluate .
-```
-
-The runtime always uses `shell=False`; it does not turn agent commands into shell scripts. The active execution environment remains responsible for sandboxing and network policy.
-
-**Question:** Can agents actually use Skein end to end—and can we measure the result reproducibly?
-
-### v0.8 — Adaptive Context Intelligence
-
-Move from retrieving context to deciding what context is sufficient.
-
-- context planning
-- task-to-subgraph reasoning
-- relevance scoring
-- dependency-aware retrieval
-- token-budget optimization
-- stale/contradictory context detection
-
-**Question:** Can Skein find the minimum sufficient context for successful work?
-
-### v0.9 — Autonomous Quality Loop
-
-Connect the continuous thread to engineering quality signals.
-
-- impact analysis
-- regression selection
-- risk scoring
-- automated quality gates
-- test generation feedback
-- production/operational feedback into the graph
-
-**Question:** Can Skein improve the engineering feedback loop?
-
-### v1.0 — Skein AI-DLC Control Plane
-
-A production-oriented control plane connecting:
-
-```text
-Graph + Context + Agents + Trace + Evidence + Governance
-```
 
 **Question:** Can Skein become trusted infrastructure for AI-native software engineering?
 
