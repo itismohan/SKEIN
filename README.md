@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC" width="720" />
+  <img src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC" width="400" style="border-radius: 12px;" />
 </p>
 
 <p align="center">
@@ -55,13 +55,13 @@ pytest -q
 
 ## 🧭 What is Skein?
 
-Modern AI engineering is moving from a single developer using a coding assistant toward **AI-DLC**: multiple agents, multiple models, automated execution, continuous evaluation and increasingly autonomous engineering workflows.
+Modern AI engineering is moving from a single developer using a coding assistant toward **AI-DLC**: multiple agents, multiple models, automated execution, continuous evaluation and increasingly au[...]
 
-The hard problem is no longer only **“Can an agent write code?”**
+The hard problem is no longer only **"Can an agent write code?"**
 
 It is:
 
-> **“Can we give agents the right engineering context, preserve traceability, measure outcomes, enforce policy and produce trustworthy evidence across the lifecycle?”**
+> **"Can we give agents the right engineering context, preserve traceability, measure outcomes, enforce policy and produce trustworthy evidence across the lifecycle?"**
 
 That is the problem Skein is designed to solve.
 
@@ -326,7 +326,7 @@ Capture execution, context, quality and lifecycle evidence without turning unsup
 ![Skein AI-DLC lifecycle](assets/skein-ai-dlc-lifecycle.gif)
 
 
-The Control Plane makes lifecycle state explicit rather than treating “agent finished” as “engineering complete.”
+The Control Plane makes lifecycle state explicit rather than treating "agent finished" as "engineering complete."
 
 ```mermaid
 flowchart LR
@@ -350,7 +350,7 @@ flowchart LR
     class I,X,R,K terminal;
 ```
 
-> GitHub's Mermaid renderer does not support arbitrary CSS animation. This diagram is intentionally GitHub-safe; the lifecycle is designed to read as a continuous flow rather than relying on non-portable animation.
+> GitHub's Mermaid renderer does not support arbitrary CSS animation. This diagram is intentionally GitHub-safe; the lifecycle is designed to read as a continuous flow rather than relying on non-[...]
 
 ### The key shift
 
@@ -441,7 +441,7 @@ Skein is not positioned as a replacement for the ecosystem. It is designed to **
  ║ SKEIN — CONTINUOUS ENGINEERING THREAD                     ║
  ║ Graph · Context · Trace · Execution · Quality · Governance ║
  ║ Evidence · AI-DLC Control Plane                            ║
- └══════════════════════════════┬══════════════════════════════┘
+ └══════════════════════════════╪══════════════════════════════┘
                                 │
  ┌──────────────────────────────▼──────────────────────────────┐
  │ Engineering Systems                                        │
@@ -461,7 +461,7 @@ Skein is not positioned as a replacement for the ecosystem. It is designed to **
 | AI coding IDEs | Developer + agent experience | Client surface |
 | **Skein** | **Engineering context + traceability + evidence + AI-DLC governance** | **Continuous engineering layer** |
 
-> **Differentiation statement:** Skein is not trying to be the best agent framework. It is trying to make AI-driven engineering **contextual, traceable, measurable and governable across the lifecycle**.
+> **Differentiation statement:** Skein is not trying to be the best agent framework. It is trying to make AI-driven engineering **contextual, traceable, measurable and governable across the lifec[...]
 
 ---
 
@@ -512,7 +512,7 @@ A compatible AI client can then use Skein's tools to query engineering context, 
 
 ```text
 Agent:
-  “What is affected by changing payment authorization?”
+  "What is affected by changing payment authorization?"
 
 Skein:
   → graph neighborhood
@@ -746,7 +746,7 @@ Skein also supports evidence grades and can explicitly report **insufficient evi
 
 ### Benchmark discipline
 
-The repository includes local measurements demonstrating strong context reduction on controlled fixtures. These are **local engineering measurements**, not universal claims about every model, repository or organization.
+The repository includes local measurements demonstrating strong context reduction on controlled fixtures. These are **local engineering measurements**, not universal claims about every model, rep[...]
 
 ---
 
@@ -754,11 +754,11 @@ The repository includes local measurements demonstrating strong context reductio
 
 Text similarity answers:
 
-> “What content looks similar to my question?”
+> "What content looks similar to my question?"
 
 Engineering systems often require:
 
-> “What is structurally connected to the thing I am changing?”
+> "What is structurally connected to the thing I am changing?"
 
 For example:
 
@@ -998,79 +998,3 @@ No. Context reduction is an optimization. The broader goal is contextual, tracea
 | ❌ Just a RAG framework | Adds graph-native engineering context and traceability |
 | ❌ Just a graph database | Connects graph state to agents, execution, quality and evidence |
 | ❌ An LLM wrapper | Remains provider-neutral |
-| ❌ A CI/CD replacement | Connects AI-DLC lifecycle and quality evidence to engineering workflows |
-| ❌ A silent autonomous production changer | Uses bounded execution, policy and explicit lifecycle controls |
-
----
-
-# 🎯 The Vision
-
-Software engineering is moving from:
-
-```text
-Human → IDE → Code
-```
-
-toward:
-
-```text
-Human
-  ↓
-AI Agents
-  ↓
-Multi-Agent Engineering
-  ↓
-Autonomous Workflows
-  ↓
-AI-Driven Software Lifecycle
-```
-
-As autonomy increases, **context, evidence and governance become more important—not less.**
-
-Skein is built for that transition.
-
-> **Not another agent.**
->
-> **Not another chatbot.**
->
-> **Not another RAG library.**
->
-> **The continuous engineering thread underneath AI-DLC.**
-
----
-
-# Skein
-
-<p align="center">
-  <strong>The Continuous Thread of AI-DLC</strong><br/>
-  Graph · Context · Trace · Agent Communication · Governance · Evidence
-</p>
-
-<p align="center"><em>One strand. End to end.</em></p>
-
----
-
-## 🤝 Contributing
-
-Skein is intended to evolve as an open engineering project.
-
-Contributions are especially welcome in:
-
-- Graph ingestion and language parsers
-- Agent adapters
-- MCP integrations
-- IDE integrations
-- Evaluation datasets
-- Experimental methodology
-- Governance policies
-- Benchmarks
-- Enterprise connectors
-- Documentation
-
-See `CONTRIBUTING.md` for contribution guidelines.
-
----
-
-## 📄 License
-
-MIT
