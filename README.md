@@ -1,361 +1,539 @@
-# Skein
+# 🧵 Skein
 
 <p align="center">
-  <img src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC" width="760">
+  <img src="assets/skein-logo.png" alt="Skein — The Continuous Thread of AI-DLC" width="720" />
 </p>
 
 <p align="center">
-  <strong>The Continuous Thread of AI-DLC</strong><br>
-  Graph · Trace · Agent Communication · Governance · Evidence
+  <strong>The Continuous Thread of AI-DLC</strong><br/>
+  Graph · Context · Trace · Agent Communication · Governance · Evidence
 </p>
+
+<p align="center"><em>One strand. End to end.</em></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version 1.0.0">
-  <img src="https://img.shields.io/badge/graph%20schema-1.0.0-purple" alt="Graph schema 1.0.0">
-  <img src="https://img.shields.io/badge/tests-78%2F78%20passing-brightgreen" alt="78 of 78 tests passing">
-  <img src="https://img.shields.io/badge/MCP-stdio%20%2B%20HTTP-7a2cff" alt="MCP stdio and HTTP">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python 3.10+"><br>
-  <img src="https://img.shields.io/badge/status-v1.0%20local%20release-success" alt="v1.0 local release">
-  <img src="https://img.shields.io/badge/provider-agnostic-informational" alt="Provider agnostic">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+  <img src="https://img.shields.io/badge/version-1.0.0-2563eb?style=for-the-badge" alt="Version 1.0.0" />
+  <img src="https://img.shields.io/badge/graph%20schema-1.0.0-7c3aed?style=for-the-badge" alt="Graph Schema 1.0.0" />
+  <img src="https://img.shields.io/badge/tests-78%2F78%20passing-16a34a?style=for-the-badge" alt="78 of 78 tests passing" />
+  <img src="https://img.shields.io/badge/MCP-stdio%20%2B%20HTTP-db2777?style=for-the-badge" alt="MCP stdio and HTTP" />
+  <img src="https://img.shields.io/badge/Python-3.10%2B-0f766e?style=for-the-badge" alt="Python 3.10+" />
+  <img src="https://img.shields.io/badge/license-MIT-475569?style=for-the-badge" alt="MIT License" />
 </p>
 
-> **One strand. End to end.**
-
-Skein is an engineering context, execution, governance and evidence layer for AI-driven software development. It turns a repository and its surrounding engineering knowledge into a **versioned graph**, exposes targeted context to agents, connects agent execution to quality evidence, and provides an explicit **AI-DLC Control Plane** for governed lifecycle decisions.
-
-Skein is deliberately **not another coding agent**. It is the continuous thread underneath agents: the layer that helps them understand the system, share context, preserve traceability, operate under governance, and produce reproducible evidence.
-
-> **Current release: v1.0.0 — AI-DLC Control Plane.**
+> **Skein is the persistent engineering context, execution, governance and evidence layer for AI-driven software development.**
 >
-> v0.7 introduced real agent execution, v0.8 adaptive context intelligence, v0.9 the autonomous quality loop, and v1.0 connects those capabilities into one governed lifecycle.
+> Agents can change. Models can change. IDEs can change. **The engineering thread should not.**
 
 ---
 
-## Current status
-
-| Area | Status | Notes |
-|---|---|---|
-| Skein software | 🟢 **v1.0.0** | AI-DLC Control Plane release |
-| Graph contract | 🟢 **v1.0.0** | Independently versioned from software |
-| Automated tests | 🟢 **78/78 passing** | Local release validation |
-| MCP | 🟢 **Available** | JSON-RPC stdio + HTTP endpoint |
-| Adaptive context | 🟢 **Available** | Deterministic, budget-aware selection |
-| Autonomous quality loop | 🟢 **Available** | Bounded retry/evaluation loop |
-| Provider bridges | 🟢 **Available** | OpenAI and Anthropic bridge contracts |
-| Governance | 🟢 **Available** | RBAC, approvals, audit, sandbox boundaries |
-| Enterprise integrations | 🟡 **Next phase** | Git/CI/Jira/SSO integrations remain deployment work |
-| Production-scale SaaS | 🟡 **Not claimed by v1.0** | v1.0 is a runnable local control-plane implementation |
-
-These labels describe the repository's current implementation status. They are not a claim that every enterprise integration is production-certified.
-
----
-
-# What is Skein?
-
-The name comes from a **skein**: a loosely coiled length of thread that can be unwound and followed as one continuous strand.
-
-That is the architectural idea behind Skein.
-
-Modern AI-assisted engineering often breaks context into isolated pieces:
-
-```text
-Requirement → Planner → Coder → Tester → Reviewer
-                  ↓        ↓        ↓
-               context  context  context
-               rebuilt  rebuilt  rebuilt
-```
-
-Skein connects those pieces:
-
-```text
-                         SKEIN
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-      GRAPH              TRACE        AGENT COMMUNICATION
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                 Adaptive Context
-                           │
-             ┌─────────────┼─────────────┐
-             ▼             ▼             ▼
-          Planner         Coder        Tester
-             │             │             │
-             └─────────────┼─────────────┘
-                           ▼
-                   Autonomous Quality
-                           │
-                    Governance Gate
-                           │
-                  Human Approval / Policy
-                           │
-                           ▼
-                        Evidence
-```
-
-The result is a persistent engineering thread connecting **what the system is, why it exists, what changed, what agents did, how quality was evaluated, and what evidence supports the outcome**.
-
----
-
-# Why do we need Skein?
-
-AI coding tools are increasingly capable, but capability alone does not solve the engineering-context problem.
-
-### Agents need system context, not just files
-
-A repository contains relationships that agents repeatedly have to reconstruct:
-
-- callers and callees
-- dependencies
-- tests and requirements
-- tickets and architectural decisions
-- affected components
-- historical changes
-- quality evidence
-
-Skein turns these relationships into a queryable engineering graph.
-
-### Multi-agent workflows lose context
-
-Planner, coder, tester and reviewer agents can each receive overlapping context. Skein provides a shared context substrate and an MCP-compatible interface so the context can be retrieved rather than reconstructed independently.
-
-### AI execution needs an evidence trail
-
-A model response is not engineering evidence. Skein records context selection, execution telemetry, traceability, quality signals, lifecycle events and approval decisions separately so they can be audited.
-
-### AI productivity needs measurement
-
-Skein supports matched Baseline/Skein evaluation, deterministic experiment assignment, token/cost telemetry and evidence grading. It is designed to say **“insufficient evidence”** rather than manufacture a productivity claim.
-
----
-
-# Skein vs. other libraries and platforms
-
-Skein is **complementary** to agent frameworks, RAG libraries, parsers and IDE assistants. The differentiator is the combination of a persistent engineering graph, adaptive context, agent execution evidence, autonomous quality feedback and a governed AI-DLC lifecycle.
-
-The table below is a **positioning comparison, not a benchmark or an exhaustive feature matrix**. Capabilities of external projects evolve independently of Skein.
-
-| Solution / category | Primary center of gravity | Engineering graph as system of record | Versioned trace & evidence | Adaptive context | Autonomous quality loop | AI-DLC governance |
-|---|---|---:|---:|---:|---:|---:|
-| **Skein** | AI-DLC context + evidence + control plane | **Yes** | **Yes** | **Yes** | **Yes** | **Yes** |
-| **LangGraph** | Stateful agent/workflow orchestration | Partial / application-defined | Partial / application-defined | Application-defined | Application-defined | Application-defined |
-| **LlamaIndex** | Data/RAG and knowledge access | Optional knowledge graphs | Partial / application-defined | Retrieval-focused | Not its primary role | Not its primary role |
-| **AutoGen** | Multi-agent conversation/orchestration | No dedicated engineering graph | Application-defined | Application-defined | Application-defined | Application-defined |
-| **CrewAI** | Role-based agent crews/workflows | No dedicated engineering graph | Application-defined | Application-defined | Application-defined | Application-defined |
-| **MCP SDK / MCP server** | Tool/context interoperability protocol | No | No | No | No | Client/server policy-dependent |
-| **Tree-sitter** | Source parsing / syntax trees | No lifecycle graph | No | No | No | No |
-| **Vector databases** | Similarity retrieval | No engineering semantics by default | No lifecycle evidence | Retrieval primitive | No | No |
-| **AI coding IDEs** | Developer interaction + code generation | Usually workspace/index oriented | Usually tool/session oriented | Yes, IDE-specific | Varies | Varies |
-
-### The practical differentiator
-
-Skein does **not** try to replace these systems. It can sit above or beside them:
-
-```text
-             IDE / Coding Agent / Agent Framework
-                          │
-                          │ MCP / SDK / CLI
-                          ▼
-                ┌──────────────────────┐
-                │        SKEIN         │
-                │                      │
-                │ Graph                │
-                │ Trace                │
-                │ Context Intelligence │
-                │ Quality Loop         │
-                │ Evidence             │
-                │ Governance           │
-                │ Control Plane        │
-                └──────────┬───────────┘
-                           │
-                     CI / Tests / Review
-```
-
-**Think of LangGraph/CrewAI/etc. as places where agents can be orchestrated; think of Skein as the engineering thread that gives those agents durable system context, traceability, evidence and governance.**
-
----
-
-# Architecture
-
-Skein is built as complementary layers rather than a single monolithic agent.
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                     AI-DLC CONTROL PLANE                     │
-│ Specify → Plan → Context → Execute → Evaluate → Approve     │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│                AUTONOMOUS QUALITY LOOP                       │
-│ Execute → Observe → Evaluate → Learn → Re-select → Retry     │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│              ADAPTIVE CONTEXT INTELLIGENCE                   │
-│ Relevance · Graph connectivity · Feedback · Token budget     │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│                   AGENT / MCP LAYER                          │
-│ CLI · Provider Bridges · MCP stdio · MCP HTTP                │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│                    ENGINEERING GRAPH                         │
-│ Files · Functions · Classes · Requirements · Tickets · Tests │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│                VERSIONING + SDD + EVIDENCE                   │
-│ Commits · Diffs · Traceability · Telemetry · Audit · RBAC    │
-└──────────────────────────────────────────────────────────────┘
-```
-
-The key design principle is that **context, communication, execution evidence and governance are one engineering substrate rather than disconnected add-ons**.
-
----
-
-# v1.0 AI-DLC Control Plane
-
-The control plane is the orchestration layer introduced in v1.0. It does not replace the graph, adaptive context engine, provider bridges or quality loop; it coordinates them.
-
-## Lifecycle
-
-```text
-Specify
-   ↓
-Plan
-   ↓
-Select Context
-   ↓
-Execute
-   ↓
-Observe
-   ↓
-Evaluate
-   ↓
-Approval Required ──→ Rejected
-   ↓
-Approved
-   ↓
-Finalize
-   ↓
-Evidence Package
-```
-
-The persistent state machine is:
-
-```text
-created → planned → executing → evaluating → approval_required → approved → completed
-```
-
-Failure, rejection and cancellation are terminal states. Invalid transitions are rejected.
-
-### Governance boundaries
-
-- risk is explicit: `low`, `medium`, `high`, `critical`
-- approval is attributable to an actor
-- quality evidence is separate from provider success
-- lifecycle events are append-only JSONL
-- exports receive a deterministic integrity fingerprint
-- the control plane does not silently mutate source code
-- existing policy and sandbox boundaries remain in force
-
-### Control-plane CLI
+## ⚡ 30-Second Quick Start
 
 ```bash
-skein control-init . \
-  --task-id PAY-142 \
-  --title "Add payment authorization" \
-  --description "Implement authorization workflow" \
-  --spec SKN-001 \
-  --risk high
+# 1. Install
+python -m venv .venv
+source .venv/bin/activate
+pip install -e '.[dev]'
 
-skein control-plan .
-skein control-begin .
-skein control-evaluate . --passed --score 0.95 --execution-id EXEC-123
-skein control-approve . --actor reviewer-1 --reason "Quality evidence reviewed"
-skein control-finalize .
-skein control-status .
-skein control-export .
-```
-
-If approval is not required for a low-risk flow, the run can be created with `--no-approval`, subject to the configured policy.
-
----
-
-# How to use Skein as an MCP server
-
-Skein exposes a lightweight, provider-neutral MCP-compatible JSON-RPC server in two local modes.
-
-## 1. Stdio — recommended for local IDEs
-
-From the project root:
-
-```bash
+# 2. Initialize + ingest a project
 skein init .
 skein ingest .
+
+# 3. Query engineering context
+skein query . "payment authorization"
+
+# 4. Connect an AI client through MCP
+skein mcp-stdio .
+
+# 5. Run the verification suite
+pytest -q
+```
+
+**Current release baseline:** `v1.0.0` · `78/78 tests passing` · MCP `stdio + HTTP` · AI-DLC Control Plane available.
+
+> **Want the shortest possible mental model?**
+> `Repository → Graph → Context → Agent → Quality → Governance → Evidence`
+
+---
+
+## 🧭 What is Skein?
+
+Modern AI engineering is moving from a single developer using a coding assistant toward **AI-DLC**: multiple agents, multiple models, automated execution, continuous evaluation and increasingly autonomous engineering workflows.
+
+The hard problem is no longer only **“Can an agent write code?”**
+
+It is:
+
+> **“Can we give agents the right engineering context, preserve traceability, measure outcomes, enforce policy and produce trustworthy evidence across the lifecycle?”**
+
+That is the problem Skein is designed to solve.
+
+Skein creates a continuous thread across:
+
+```text
+Requirements / Specs
+        │
+        ▼
+┌──────────────────────┐
+│  Engineering Graph   │
+│ code · tests · intent │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Context Intelligence │
+│ relevance · topology │
+│ budget · diversity   │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Agent Execution      │
+│ MCP · providers      │
+│ adapters · telemetry │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Quality + Governance │
+│ gates · policy · RBAC│
+│ approval · audit     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Evidence             │
+│ trace · outcome      │
+│ integrity · replay   │
+└──────────────────────┘
+```
+
+### The thesis
+
+> **AI agents should be replaceable. Engineering context should not.**
+
+Skein is therefore **not another coding agent**. It is the engineering layer around agents.
+
+---
+
+# 🧵 Why Skein?
+
+Without a persistent engineering context, every agent tends to reconstruct its own view of the system:
+
+```text
+Agent A → Repository → Context A
+Agent B → Repository → Context B
+Agent C → Repository → Context C
+Agent D → Repository → Context D
+```
+
+The result is fragmented context, duplicated discovery, inconsistent assumptions and weak traceability.
+
+Skein changes the pattern:
+
+```text
+                 ┌─────────────────────┐
+                 │       SKEIN         │
+                 │ Continuous Thread   │
+                 │ Graph · Context     │
+                 │ Trace · Evidence    │
+                 └──────────┬──────────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+       Planner          Developer          Tester
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            │
+                     Quality + Policy
+                            │
+                         Evidence
+```
+
+The agents can remain specialized. **The engineering context remains continuous.**
+
+---
+
+# 🏗️ Architecture at a Glance
+
+```mermaid
+flowchart TB
+    U[Developer / Product / Engineering] --> C[AI Clients & IDEs]
+    C --> M[MCP Boundary]
+
+    subgraph S[SKEIN — AI-DLC Engineering Layer]
+      M --> CP[AI-DLC Control Plane]
+      CP --> G[Engineering Graph]
+      CP --> CI[Adaptive Context Intelligence]
+      CP --> EX[Agent Execution & Provider Bridges]
+      CP --> Q[Quality Loop & Evaluation]
+      CP --> GOV[Governance · RBAC · Policy · Approval]
+      CP --> EV[Evidence · Audit · Integrity]
+      G <--> CI
+      CI --> EX
+      EX --> Q
+      Q --> GOV
+      GOV --> EV
+      EV --> CP
+    end
+
+    G --> R[Repositories · Specs · Tests · ADRs]
+    EX --> P[Model Providers / CLI / SDKs]
+    EV --> O[CI/CD · Dashboards · Evidence Packages]
+
+    classDef core fill:#eef2ff,stroke:#4f46e5,stroke-width:2px,color:#111827;
+    classDef edge fill:#fdf2f8,stroke:#db2777,stroke-width:2px,color:#111827;
+    classDef source fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#111827;
+    class CP,G,CI,EX,Q,GOV,EV core;
+    class U,C,M,P,O edge;
+    class R source;
+```
+
+### Architectural principle
+
+Skein sits **between engineering systems and AI clients**.
+
+It does not require replacing the developer's IDE, model provider, CI/CD system or agent framework.
+
+It provides the missing continuity layer.
+
+---
+
+# ✨ Capability Cards
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🧠 Engineering Graph
+
+Build a queryable representation of engineering structure and relationships.
+
+**Includes**
+- Files, functions, classes
+- Requirements, tickets, ADRs
+- Test cases
+- Calls and imports
+- Intent and verification relationships
+- Cross-file resolution
+
+</td>
+<td width="50%" valign="top">
+
+### 🎯 Adaptive Context Intelligence
+
+Select the engineering evidence an agent actually needs instead of flooding its context window.
+
+**Considers**
+- Relevance
+- Graph connectivity
+- Bounded feedback
+- Diversity
+- Token/context budgets
+- Deterministic selection
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### 🔗 Traceability
+
+Connect intent → implementation → verification.
+
+Answer questions such as:
+
+- What implements this requirement?
+- Which tests cover it?
+- What is affected by this change?
+- What changed between graph versions?
+
+</td>
+<td valign="top">
+
+### 🤖 Agent Communication
+
+Provide a shared engineering context for multi-agent workflows.
+
+Planner, developer, tester, security and reviewer agents can work against the same persistent engineering thread.
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### 🔌 MCP Integration
+
+Expose Skein through an MCP-compatible boundary.
+
+**Available transports**
+- stdio
+- HTTP
+
+**Core tools**
+- `query_graph`
+- `get_subgraph`
+- `get_traceability`
+- `get_diff`
+- `propose_node`
+- `propose_edge`
+- `commit_proposal`
+
+</td>
+<td valign="top">
+
+### 🔐 Governance & Control
+
+Keep AI-driven engineering policy-controlled.
+
+**Controls**
+- Identity
+- RBAC
+- Proposals
+- Approval gates
+- Policy enforcement
+- Audit events
+- Risk classification
+- Integrity verification
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### 🔄 Autonomous Quality Loop
+
+A bounded feedback loop for agentic engineering.
+
+`Task → Select → Execute → Observe → Evaluate → Learn → Retry`
+
+With explicit iteration limits, quality evaluators and append-only feedback.
+
+</td>
+<td valign="top">
+
+### 📦 Evidence & Measurement
+
+Treat engineering evidence as a first-class artifact.
+
+Capture execution, context, quality and lifecycle evidence without turning unsupported measurements into marketing claims.
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🔄 The AI-DLC Lifecycle
+
+![Skein AI-DLC lifecycle](assets/skein-ai-dlc-lifecycle.gif)
+
+
+The Control Plane makes lifecycle state explicit rather than treating “agent finished” as “engineering complete.”
+
+```mermaid
+flowchart LR
+    A([Created]) --> B([Planned])
+    B --> C([Executing])
+    C --> D([Evaluating])
+    D --> E{Quality Gate}
+    E -->|Pass| F([Approval Required])
+    E -->|Fail| X([Failed])
+    F --> G{Human Approval}
+    G -->|Approve| H([Approved])
+    G -->|Reject| R([Rejected])
+    H --> I([Completed])
+    C --> K([Cancelled])
+
+    classDef state fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#111827;
+    classDef gate fill:#fff7ed,stroke:#ea580c,stroke-width:2px,color:#111827;
+    classDef terminal fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#111827;
+    class A,B,C,D,F,H state;
+    class E,G gate;
+    class I,X,R,K terminal;
+```
+
+> GitHub's Mermaid renderer does not support arbitrary CSS animation. This diagram is intentionally GitHub-safe; the lifecycle is designed to read as a continuous flow rather than relying on non-portable animation.
+
+### The key shift
+
+```text
+Agent completed
+      ≠
+Engineering completed
+```
+
+Skein asks for:
+
+```text
+Intent
+  +
+Context
+  +
+Execution
+  +
+Quality
+  +
+Authorization
+  +
+Evidence
+  =
+Engineering outcome
+```
+
+---
+
+# 🧬 The Continuous Thread
+
+Skein connects four fundamental concerns:
+
+```mermaid
+flowchart TB
+    K[KNOW] --> A[ACT]
+    A --> P[PROVE]
+    P --> G[GOVERN]
+    G --> K
+
+    K --> K1[Graph · Context · History · Trace]
+    A --> A1[MCP · Agents · Providers · Execution]
+    P --> P1[Quality · Evaluation · Telemetry · Evidence]
+    G --> G1[Policy · RBAC · Approval · Audit]
+```
+
+### KNOW
+
+Understand the engineering system.
+
+### ACT
+
+Give agents controlled access to engineering context and execution capabilities.
+
+### PROVE
+
+Capture quality, traceability and outcome evidence.
+
+### GOVERN
+
+Ensure autonomous workflows remain policy-controlled and auditable.
+
+---
+
+# 🆚 Skein vs. the AI Engineering Ecosystem
+
+Skein is not positioned as a replacement for the ecosystem. It is designed to **connect and complement it**.
+
+```text
+                         AI ENGINEERING STACK
+
+ ┌─────────────────────────────────────────────────────────────┐
+ │ IDE / Developer Experience                                  │
+ │ VS Code · AI coding environments · internal developer tools │
+ └──────────────────────────────┬──────────────────────────────┘
+                                │
+ ┌──────────────────────────────▼──────────────────────────────┐
+ │ Agent / Workflow Layer                                      │
+ │ LangGraph · AutoGen · CrewAI · custom orchestrators         │
+ └──────────────────────────────┬──────────────────────────────┘
+                                │
+ ┌──────────────────────────────▼──────────────────────────────┐
+ │ Retrieval / Knowledge Layer                                 │
+ │ LlamaIndex · vector databases · search · RAG                │
+ └──────────────────────────────┬──────────────────────────────┘
+                                │
+ ┌══════════════════════════════▼══════════════════════════════┐
+ ║ SKEIN — CONTINUOUS ENGINEERING THREAD                     ║
+ ║ Graph · Context · Trace · Execution · Quality · Governance ║
+ ║ Evidence · AI-DLC Control Plane                            ║
+ └══════════════════════════════┬══════════════════════════════┘
+                                │
+ ┌──────────────────────────────▼──────────────────────────────┐
+ │ Engineering Systems                                        │
+ │ Code · Tests · Specs · ADRs · CI/CD · operational evidence │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+| Technology / category | Primary concern | Skein's relationship |
+|---|---|---|
+| LangGraph | Agent/workflow orchestration | Complementary |
+| LlamaIndex | Data, indexing and RAG | Complementary |
+| AutoGen | Multi-agent orchestration | Complementary |
+| CrewAI | Agent crews and workflows | Complementary |
+| MCP | Agent/tool interoperability | Skein integration boundary |
+| Tree-sitter | Source parsing | Ingestion building block |
+| Vector databases | Similarity retrieval | Optional retrieval infrastructure |
+| AI coding IDEs | Developer + agent experience | Client surface |
+| **Skein** | **Engineering context + traceability + evidence + AI-DLC governance** | **Continuous engineering layer** |
+
+> **Differentiation statement:** Skein is not trying to be the best agent framework. It is trying to make AI-driven engineering **contextual, traceable, measurable and governable across the lifecycle**.
+
+---
+
+# 🧩 How Skein Fits Into an Agentic Workflow
+
+```mermaid
+sequenceDiagram
+    participant H as Human
+    participant I as IDE / AI Client
+    participant S as Skein
+    participant A as Agent
+    participant Q as Quality Gate
+
+    H->>I: Request engineering change
+    I->>S: Request relevant context
+    S-->>I: Graph-backed engineering evidence
+    I->>A: Execute with bounded context
+    A->>S: Record execution + proposals
+    S->>Q: Evaluate evidence and quality
+    Q-->>S: Pass / fail + quality evidence
+    S-->>I: Traceability + lifecycle state
+    I-->>H: Explainable engineering outcome
+```
+
+The important property is that the agent does not become the system of record for engineering context.
+
+**Skein does.**
+
+---
+
+# 🔌 MCP in One Minute
+
+Start Skein as a local MCP server:
+
+```bash
 skein mcp-stdio .
 ```
 
-The process communicates over stdin/stdout and is intended to be started by an MCP client. Do **not** launch it in a terminal and expect a normal interactive prompt; the client owns the protocol stream.
-
-Available tools include:
-
-| Tool | Purpose |
-|---|---|
-| `query_graph` | Search the shared engineering graph |
-| `get_subgraph` | Retrieve a node neighborhood |
-| `get_traceability` | Retrieve links for specs/commits |
-| `get_diff` | Compare graph versions |
-| `propose_node` | Create a governed graph proposal |
-| `propose_edge` | Create a governed graph proposal |
-| `commit_proposal` | Commit an approved proposal |
-
-Write operations require an authenticated identity and policy authorization. Reviewer/admin identities are required for proposal commits.
-
-## 2. HTTP — useful for shared/dev environments
+Or HTTP:
 
 ```bash
 skein mcp-http . --host 127.0.0.1 --port 8765
 ```
 
-The MCP endpoint is:
+A compatible AI client can then use Skein's tools to query engineering context, retrieve traceability, inspect graph diffs and participate in controlled proposal/commit workflows.
+
+### Example MCP interaction
 
 ```text
-POST http://127.0.0.1:8765/mcp
-GET  http://127.0.0.1:8765/health
+Agent:
+  “What is affected by changing payment authorization?”
+
+Skein:
+  → graph neighborhood
+  → dependent functions
+  → related requirements
+  → related tests
+  → recent graph changes
+  → relevant engineering evidence
 ```
 
-The HTTP adapter accepts `X-Skein-Identity` for identity-scoped operations. Keep the endpoint bound to localhost unless you have explicitly placed it behind an authenticated, policy-controlled network boundary.
-
-### MCP security model
-
-Skein intentionally separates **read context** from **write proposals**:
-
-```text
-Agent / IDE
-    │
-    ├── read graph ────────────────► allowed by read policy
-    │
-    ├── propose change ────────────► identity + policy
-    │
-    └── commit proposal ───────────► reviewer/admin gate
-```
-
-Skein does not store provider API keys in graph telemetry and does not turn model-generated shell commands into privileged execution.
+The agent receives **engineering context**, not an undifferentiated repository dump.
 
 ---
 
-# IDE integration
+# 🖥️ IDE Integration
 
-Skein does not require a custom IDE extension for the core integration. **MCP is the integration boundary.** Any MCP-capable IDE/client can consume the Skein tools.
+Skein is designed to work underneath the existing IDE experience.
 
-## VS Code + GitHub Copilot / Agent mode
-
-Current VS Code releases support workspace MCP configuration in `.vscode/mcp.json`. A local Skein configuration can be as small as:
+For a VS Code MCP configuration:
 
 ```json
 {
@@ -369,687 +547,532 @@ Current VS Code releases support workspace MCP configuration in `.vscode/mcp.jso
 }
 ```
 
-Then:
-
-1. Open the repository in VS Code.
-2. Create `.vscode/mcp.json` with the configuration above.
-3. Ensure `skein` is on your PATH, or replace `command` with the absolute executable path.
-4. Run **MCP: List Servers** to confirm Skein starts.
-5. Open Agent/Chat mode and enable the Skein tools.
-6. Ask questions such as:
+The architectural separation is intentional:
 
 ```text
-What functions are affected by the checkout change?
-Which tests cover create_order?
-Show me the graph neighborhood around payment authorization.
-Compare the current graph with the previous commit.
+IDE
+ │
+ ├── Developer experience
+ ├── Agent interaction
+ └── Code editing
+        │
+        ▼
+       MCP
+        │
+        ▼
+     SKEIN
+        │
+        ├── Context
+        ├── Graph
+        ├── Traceability
+        ├── Governance
+        └── Evidence
 ```
 
-The IDE remains the coding surface; Skein supplies durable engineering context and governed graph operations.
-
-Ready-to-copy examples are included in `examples/mcp/`, including a VS Code `.vscode/mcp.json` configuration and a generic `mcpServers` configuration.
-
-> VS Code's MCP configuration and trust model evolve independently of Skein. Treat the client-specific configuration above as the current workspace pattern and verify the client version when deploying it.
-
-## Other MCP-capable IDEs and agent clients
-
-The same local stdio server can be registered with clients that use the common `mcpServers` configuration shape:
-
-```json
-{
-  "mcpServers": {
-    "skein": {
-      "command": "skein",
-      "args": ["mcp-stdio", "/absolute/path/to/project"]
-    }
-  }
-}
-```
-
-Client configuration names and locations vary. The invariant is the command:
-
-```bash
-skein mcp-stdio /absolute/path/to/project
-```
-
-For remote/shared use, point the client at the HTTP `/mcp` endpoint and provide the identity/authentication mechanism required by the deployment.
+Skein does **not** require a custom IDE extension to become useful.
 
 ---
 
-# Greenfield project: first Skein project from zero
+# 🌱 Greenfield Projects
 
-Greenfield projects benefit from introducing Skein **before** the codebase becomes large.
+Use Skein from the first vertical slice.
 
-## Step 1 — create the project
-
-```bash
-mkdir checkout-service
-cd checkout-service
-python -m venv .venv
-source .venv/bin/activate
-pip install -e /path/to/skein
+```text
+Specification
+     ↓
+Vertical Slice
+     ↓
+Implementation
+     ↓
+Tests
+     ↓
+Graph
+     ↓
+Context Selection
+     ↓
+Agent Execution
+     ↓
+Quality
+     ↓
+Approval
+     ↓
+Evidence
 ```
 
-If Skein itself is being installed from a package rather than a source checkout, use the normal package installation method instead.
-
-## Step 2 — initialize the engineering thread
+Example:
 
 ```bash
 skein init .
 skein spec-check .
+skein ingest . --message "initial vertical slice"
+skein query . "checkout"
+skein trace . --spec SKN-001
 ```
 
-Create the first machine-readable requirements/specification clauses under `spec/clauses/` and keep each clause bounded to the increment you can actually verify.
+### Greenfield principle
 
-## Step 3 — build a thin vertical slice
+> **Start small. Build evidence early. Grow the engineering graph with the system.**
+
+Avoid creating a giant specification before the system has demonstrated what is real.
+
+---
+
+# 🏚️ Brownfield Projects
+
+Brownfield engineering has a different starting point: an existing system full of implicit knowledge.
+
+```text
+Existing Repository
+        ↓
+      Ingest
+        ↓
+ Engineering Graph
+        ↓
+Characterize Behavior
+        ↓
+ Establish Trust
+        ↓
+ Define Specification
+        ↓
+   Bounded Change
+        ↓
+ Quality Verification
+        ↓
+     Approval
+        ↓
+      Evidence
+```
+
+The critical principle is:
+
+> **Observed behavior is not automatically intent.**
+
+Legacy behavior may represent a requirement, workaround, accidental dependency, historical defect or undocumented contract.
+
+Skein helps preserve that distinction while changes are made.
+
+---
+
+# 🔄 Autonomous Quality Loop
+
+Skein's quality loop is deliberately bounded.
+
+```mermaid
+flowchart LR
+    T[Task] --> C[Select Context]
+    C --> E[Execute]
+    E --> O[Observe]
+    O --> Q[Evaluate]
+    Q --> L[Learn]
+    L --> D{Retry?}
+    D -->|Yes| C
+    D -->|No| X[Stop + Evidence]
+```
+
+The loop supports:
+
+- Maximum iterations
+- Bounded feedback
+- Pluggable quality evaluation
+- Append-only feedback
+- Execution fingerprints
+- Context fingerprints
+- Explicit stop reasons
+
+A successful model invocation is **not** treated as proof of engineering success.
+
+---
+
+# 🔐 Governance by Design
+
+Skein separates **capability** from **authority**.
+
+```text
+Agent
+ │
+ ├── Can request context
+ ├── Can propose actions
+ └── Can execute within configured boundaries
+             │
+             ▼
+      Identity + Policy
+             │
+             ▼
+       Quality Gate
+             │
+             ▼
+      Human Approval
+             │
+             ▼
+           Commit
+             │
+             ▼
+          Evidence
+```
+
+### Four rules
+
+1. **Context is not authority.**
+2. **Proposal is not commitment.**
+3. **Execution is not success.**
+4. **Evidence should be reproducible.**
+
+---
+
+# 📊 Evidence, Not Hype
+
+AI engineering metrics can easily become marketing numbers.
+
+Skein treats measurement as an engineering problem.
+
+Matched evaluation can compare:
+
+```text
+Baseline workflow
+       vs
+Skein-assisted workflow
+```
+
+Potential evidence includes:
+
+- Context tokens
+- Cost
+- Latency
+- Rework
+- Handoff loss
+- Task outcome
+- Quality guardrails
+- Execution metadata
+
+Skein also supports evidence grades and can explicitly report **insufficient evidence** rather than manufacturing a conclusion.
+
+### Benchmark discipline
+
+The repository includes local measurements demonstrating strong context reduction on controlled fixtures. These are **local engineering measurements**, not universal claims about every model, repository or organization.
+
+---
+
+# 🧠 Why Graph Instead of Only RAG?
+
+Text similarity answers:
+
+> “What content looks similar to my question?”
+
+Engineering systems often require:
+
+> “What is structurally connected to the thing I am changing?”
 
 For example:
 
 ```text
 Requirement
-   ↓
-API contract
-   ↓
-Implementation
-   ↓
-Unit/integration test
-   ↓
-Quality evidence
+   │
+   ├── JUSTIFIES ──► Function
+   │                    │
+   │                    ├── CALLS ──► Function
+   │                    │
+   │                    └── TESTED BY ──► Test
+   │
+   └── AFFECTED BY ──► Change
 ```
 
-Then ingest the repository:
+Skein therefore treats graph structure as a first-class source of engineering context.
 
-```bash
-skein ingest . --message "initial checkout vertical slice"
+Vector retrieval can complement this model; it does not have to replace it.
+
+---
+
+# 🧬 Core Data Model
+
+### Nodes
+
+```text
+File
+Function
+Class
+Requirement
+Ticket
+ADR
+TestCase
 ```
 
-Inspect the graph:
+### Relationships
 
-```bash
-skein query . "checkout"
-skein trace . --spec SKN-001
+```text
+CALLS
+IMPORTS
+JUSTIFIES
+TESTS
+EXTRACTED
+INFERRED
 ```
 
-## Step 4 — use adaptive context
+The graph is versioned so that engineering context can be compared over time.
 
-```bash
-skein context-select --task-id checkout-001 \
-  --query "validate checkout payment authorization" \
-  --budget 1200
+---
 
-skein context-render --task-id checkout-001 \
-  --query "validate checkout payment authorization" \
-  --budget 1200
-```
+# 🛠️ Control Plane Example
 
-## Step 5 — run a governed AI-DLC task
+Initialize a controlled task:
 
 ```bash
 skein control-init . \
   --task-id checkout-001 \
   --title "Implement payment authorization" \
-  --description "Authorize a checkout payment before order confirmation" \
+  --description "Authorize payment before order confirmation" \
   --spec SKN-001 \
   --risk medium
+```
 
+Plan and begin:
+
+```bash
 skein control-plan .
 skein control-begin .
 ```
 
-Execute the approved agent workflow through the adapter/runtime, run the real tests, then record objective quality evidence:
+Evaluate:
 
 ```bash
 skein control-evaluate . --passed --score 0.96
-skein control-approve . --actor engineer-1 --reason "Tests and review passed"
-skein control-finalize .
 ```
 
-Finally export the evidence:
+Approve:
 
 ```bash
+skein control-approve . \
+  --actor engineer-1 \
+  --reason "Tests and review passed"
+```
+
+Finalize and export evidence:
+
+```bash
+skein control-finalize .
 skein control-export . > evidence.json
 ```
 
-### Greenfield principle
-
-Do not create a giant specification for the entire future product. Build one verifiable vertical slice at a time. The spec's blast radius should not exceed what the current increment can validate.
-
 ---
 
-# Brownfield project: introducing Skein into an existing system
+# 🧪 Testing & Verification
 
-Brownfield adoption is intentionally different. The existing code is **observed behavior**, not automatically authoritative requirements.
-
-## Step 1 — initialize without changing application code
-
-From the existing repository:
-
-```bash
-cd existing-service
-skein init .
-skein ingest . --message "baseline brownfield graph"
-```
-
-Review the resulting graph and communities before asking an agent to modify anything:
-
-```bash
-skein query . "payment"
-skein communities .
-skein history .
-```
-
-## Step 2 — classify what you discover
-
-Treat reverse-engineered behavior as evidence with different trust levels:
-
-- **Corroborated:** code + meaningful test/docs/human confirmation agree.
-- **Plausible but unverified:** behavior exists but intent is unclear; characterize it before treating it as a requirement.
-- **Suspicious legacy behavior:** likely accidental or dangerous; do not promote it to an authoritative requirement without a decision.
-
-This prevents Skein from turning every legacy quirk into a permanent specification.
-
-## Step 3 — start with one bounded context
-
-Pick one business-critical but containable area. Add or refine the relevant SDD clauses and characterization tests. Then re-ingest:
-
-```bash
-skein ingest . --message "characterize payment behavior"
-skein spec-check .
-skein trace . --spec SKN-001
-```
-
-## Step 4 — introduce MCP to the IDE
-
-Configure the repository's MCP client to run:
-
-```bash
-skein mcp-stdio /absolute/path/to/existing-service
-```
-
-Now the coding agent can ask Skein for the structural neighborhood before proposing a change instead of reconstructing the whole legacy system in its prompt.
-
-## Step 5 — use the quality loop conservatively
-
-For a risky legacy change, let the agent work within a bounded task and feed actual test/static-analysis results into the quality evaluator. If quality fails, the v0.9 loop can re-select context and retry within an explicit iteration budget.
-
-## Step 6 — keep the old system behind a boundary
-
-For substantial migrations, use an anti-corruption/translation boundary so newly verified behavior does not inherit every legacy quirk automatically.
-
-### Brownfield principle
-
-**Observed behavior is not automatically intent.** Skein gives you the graph and evidence needed to separate what the system does from what the organization has decided it should do.
-
----
-
-# Testing Skein itself
-
-Run the full local test suite:
+Run the full test suite:
 
 ```bash
 pytest -q
 ```
 
-Expected v1.0 release baseline:
+Expected current release baseline:
 
 ```text
 78 passed
 ```
 
-Run the release/security checks:
+Additional release checks:
 
 ```bash
 skein release-check .
 skein hardening .
 skein certify .
 skein verify .
-```
-
-Generate the local control panel:
-
-```bash
 skein dashboard .
 ```
 
-Then open:
-
-```text
-.skein/dashboard.html
-```
-
-The panel is self-contained and embeds the Skein logo; it does not require an external image host.
-
----
-
-# Graph contract
-
-The current graph contract is independently versioned as **Graph Schema v1.0.0**.
-
-### Node types
-
-- `File`
-- `Function`
-- `Class`
-- `Requirement`
-- `Ticket`
-- `ADR`
-- `TestCase`
-
-### Edge types
-
-- `CALLS`
-- `IMPORTS`
-- `JUSTIFIES`
-- `TESTS`
-- `EXTRACTED`
-- `INFERRED`
-
-The schema lives outside implementation code so ingestion, querying, versioning, compression and agent integrations share the same contract.
-
----
-
-# Adaptive Context Intelligence — v0.8
-
-v0.8 moved Skein from **context provider** to **context selector**.
-
-The selector ranks engineering evidence using a transparent first-generation model:
-
-```text
-score =
-    0.72 × lexical relevance
-  + 0.18 × graph connectivity
-  + 0.10 × bounded feedback
-```
-
-A diversity bonus is applied during greedy selection. Selection is deterministic, budget-aware and persisted as append-only evidence.
-
-CLI:
+Generate the local governance/control dashboard:
 
 ```bash
-skein context-select --task-id T1 --query "create order payment" --budget 1200
-skein context-render --task-id T1 --query "create order payment" --budget 1200
-skein context-feedback --selection-id <id> --node function:create_order --reward 1 --task-id T1
-skein context-health
+skein dashboard . --output dashboard.html
 ```
-
-This is **adaptive retrieval, not autonomous reinforcement learning**. Explicit feedback is bounded and auditable.
 
 ---
 
-# Autonomous Quality Loop — v0.9
+# 📦 Current Capability Matrix
 
-v0.9 closes the adaptive-context loop:
+| Capability | v1.0 status |
+|---|---:|
+| Engineering graph | 🟢 Available |
+| Graph versioning / diff | 🟢 Available |
+| Specification / traceability | 🟢 Available |
+| Verified context compression | 🟢 Available |
+| Adaptive context intelligence | 🟢 Available |
+| MCP stdio | 🟢 Available |
+| MCP HTTP | 🟢 Available |
+| Provider-neutral agent adapters | 🟢 Available |
+| Agent execution | 🟢 Available |
+| Autonomous quality loop | 🟢 Available |
+| Evaluation / evidence engine | 🟢 Available |
+| Governance / RBAC | 🟢 Available |
+| AI-DLC Control Plane | 🟢 Available |
+| Evidence integrity | 🟢 Available |
+| Enterprise integrations | 🟡 Next phase |
+| Production-scale SaaS | 🟡 Not claimed by v1.0 |
+
+---
+
+# 🗺️ Roadmap
+
+## v1.0 — AI-DLC Control Plane
+
+**Current**
 
 ```text
-Task
- ↓
-Select context
- ↓
-Execute agent
- ↓
-Observe
- ↓
-Evaluate engineering quality
- ↓
-Learn bounded relevance feedback
- ↓
-Re-select context
- ↓
-Retry or stop
+Specify → Plan → Context → Execute → Evaluate → Approve → Finalize
 ```
 
-Guardrails include:
+## v1.1 — Enterprise Control Plane
 
-- explicit maximum iterations
-- injectable quality evaluator
-- bounded feedback `[-1, 1]`
-- append-only loop evidence
-- execution/context/quality fingerprints
-- explicit stop reasons
-- no autonomous source-code mutation by Skein itself
+Planned areas:
 
-A provider API success is **not** treated as proof that the engineering task succeeded.
-
----
-
-# Agent execution and provider bridges
-
-Skein v0.7 introduced a provider-neutral adapter layer and concrete bridges for:
-
-- OpenAI Responses API / Chat Completions-compatible clients
-- Anthropic Messages-compatible clients
-- generic SDK callables
-- controlled CLI/argv execution
-
-Provider SDKs remain optional. Credentials and provider client lifecycle stay outside Skein core.
-
-The evidence flow is:
-
-```text
-AgentRequest
-   ↓
-Provider / CLI adapter
-   ↓
-Normalized AgentResult
-   ↓
-ConnectorEvent
-   ↓
-Evaluation / Evidence
-```
-
----
-
-# Traceability and evidence
-
-Skein connects engineering intent to implementation and verification.
-
-```text
-Requirement
-    │
-    ├── JUSTIFIES ──> Function / File
-    │                    │
-    │                    └── CALLS ──> Function
-    │
-    └── TESTS ────────> TestCase
-```
-
-Useful questions include:
-
-- What code implements this requirement?
-- What tests cover this change?
-- Which requirements are affected by this file?
-- What changed between graph versions?
-- Which agent performed the action?
-- What quality evidence supports the outcome?
-- Who approved the final decision?
-
----
-
-# Compression and measurement
-
-Skein's verified compression layer reduces unnecessary context while preserving load-bearing code, commands and errors. The Stage 1 commerce fixture demonstrated approximately **95% context reduction with 100% structural retrieval F1** for the evaluated fixture.
-
-These are local benchmark results, not a production LLM savings claim. Real-world effectiveness should be established with matched agent experiments.
-
-The v0.5 evaluation engine supports metrics such as:
-
-- context tokens
-- cost
-- latency
-- rework
-- handoff loss
-- task outcome / success guardrails
-
-Evidence grades intentionally distinguish strong evidence from insufficient evidence.
-
----
-
-# Governance and safety
-
-Current controls include:
-
-- identity-scoped agent actions
-- proposal/approval separation
-- reviewer/admin commit gates
-- audit records
-- policy enforcement
-- sandbox controls
-- secret scanning
-- integrity verification
-- replay protection
-- explicit evidence boundaries
-- controlled argv execution with `shell=False`
-
-The design principle is:
-
-> **Agents may accelerate engineering decisions without silently becoming the authority for those decisions.**
-
----
-
-# Local dashboard / Control Panel
-
-Skein v1.0 includes a self-contained HTML dashboard generated from the local workspace:
-
-```bash
-skein dashboard .
-```
-
-It includes Skein branding, graph/history information, telemetry, compression health, control-plane state and governance posture.
-
-The control panel is intentionally local and dependency-light. It is a visibility surface over the evidence already persisted by Skein; it is not a replacement for the control-plane APIs.
-
----
-
-# FAQ
-
-### Is Skein another coding agent?
-
-No. Skein is the context, evidence, execution and governance layer around agents. Agents can remain replaceable.
-
-### Is Skein a RAG library?
-
-Not primarily. Retrieval is one capability. Skein's distinctive unit is **engineering evidence connected to a versioned graph and lifecycle state**, not a generic document/vector index.
-
-### Does Skein replace LangGraph, CrewAI, AutoGen or LlamaIndex?
-
-No. Those systems can remain the agent/orchestration/retrieval layer. Skein can sit beside them through SDK adapters or MCP.
-
-### Does Skein require an LLM?
-
-No for core graph ingestion, querying, versioning, compression, governance, MCP and deterministic context selection. Provider execution bridges obviously require the relevant provider/client when you choose to run real models.
-
-### Does Skein store my OpenAI or Anthropic API keys?
-
-No. Provider credentials and provider client lifecycle remain outside Skein core.
-
-### Can Skein modify my source code autonomously?
-
-The v1.0 control plane does not silently mutate source code. Agent execution can be integrated, but repository mutation remains bounded by the external execution environment, policies and explicit workflow controls.
-
-### What happens if the agent succeeds but the tests fail?
-
-The provider invocation can be recorded as successful while the engineering quality gate fails. Skein keeps those signals separate and can stop or retry the quality loop.
-
-### Can I use Skein with a brownfield application?
-
-Yes. Brownfield is a primary use case. Start by ingesting and characterizing the existing system. Treat reverse-engineered behavior as evidence with trust levels rather than blindly promoting every legacy behavior to a requirement.
-
-### Can I use Skein for a greenfield application?
-
-Yes. Start with a small vertical slice: specification → implementation → tests → evidence. Grow the graph and specification incrementally.
-
-### Does Skein require a vector database?
-
-No. v0.8 adaptive selection is deterministic and graph-native. Vector databases can be added later as optional retrieval infrastructure.
-
-### Does Skein require Kubernetes, Postgres or a cloud service?
-
-No for the local implementation. The v1.0 bundle is designed to run locally. Enterprise deployment infrastructure is a future integration concern.
-
-### Is the MCP implementation an official SDK implementation?
-
-Skein provides a lightweight MCP-compatible JSON-RPC server and protocol artifacts. It is intentionally provider-neutral. The repository does not claim that every commercial MCP client/provider integration is officially certified.
-
-### How do I know whether Skein actually improves engineering?
-
-Run matched Baseline/Skein experiments, capture real task outcomes and quality evidence, and use the evaluation engine. Do not infer engineering improvement from token reduction alone.
-
-### What is the most important idea behind Skein?
-
-**The continuous thread.** Context, communication, execution, quality, traceability and governance should remain connected from specification to production evidence.
-
----
-
-# Roadmap
-
-## v1.0 — AI-DLC Control Plane — current
-
-```text
-Specify → Plan → Select Context → Execute → Evaluate → Approve → Finalize
-```
-
-Implemented:
-
-- persistent AI-DLC lifecycle state machine
-- append-only lifecycle event ledger
-- explicit quality gate
-- human approval gate
-- deterministic evidence integrity fingerprint
-- adaptive context integration
-- autonomous quality-loop integration
-- MCP context access
-- provider-neutral execution bridges
-
-## v1.1 — Enterprise Control Plane — next
-
-The next phase should focus on real enterprise adoption rather than simply adding more agent features:
-
-- GitHub/GitLab pull-request integration
-- Jira/Azure DevOps traceability
+- GitHub / GitLab pull-request integration
+- Jira / Azure DevOps traceability
 - CI/CD quality gates
-- real test-result ingestion
-- policy-as-code expansion
-- enterprise identity / SSO
-- organization/project isolation
-- multi-repository graph federation
-- production audit exports
-- operational dashboards and alerts
+- Real test-result ingestion
+- Expanded policy-as-code
+- Enterprise identity / SSO
+- Organization/project isolation
+- Multi-repository graph federation
+- Enterprise audit exports
+- Operational dashboards and alerts
 
 ## Longer term
 
-- learned/hybrid context ranking
-- production feedback and incident linkage
-- richer agent marketplace/adapter ecosystem
-- enterprise-scale multi-project governance
+- Learned / hybrid context ranking
+- Production feedback and incident linkage
+- Richer agent adapter ecosystem
+- Enterprise-scale multi-project governance
 - AI-DLC control-plane interoperability
 
 ---
 
-# Installation
+# ❓ FAQ
 
-For development:
+### Is Skein an AI agent?
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e '.[dev]'
-```
+No. Skein is the engineering context, execution, governance and evidence layer around agents.
 
-Run the suite:
+### Does Skein replace LangGraph, CrewAI, AutoGen or LlamaIndex?
 
-```bash
-pytest -q
-```
+No. Skein is designed to complement orchestration and retrieval frameworks.
 
-Check the version:
+### Does Skein require an LLM?
 
-```bash
-skein version
-```
+No. Core graph, versioning, querying, deterministic context selection and governance capabilities can operate without an LLM. Provider execution requires the relevant provider when enabled.
 
-Initialize a repository:
+### Does Skein require a vector database?
 
-```bash
-skein init .
-```
+No. The current adaptive context system is graph-native and deterministic. Vector retrieval can be added as complementary infrastructure.
 
-Ingest it:
+### Can Skein work with legacy applications?
 
-```bash
-skein ingest .
-```
+Yes. Brownfield ingestion and characterization are important use cases.
+
+### Can Skein work with greenfield projects?
+
+Yes. The recommended approach is incremental: specification → vertical slice → implementation → tests → graph → evidence.
+
+### Can I use Skein from my IDE?
+
+Yes. MCP is the primary integration boundary, allowing compatible AI clients to consume Skein's engineering context.
+
+### Does Skein lock me to one model provider?
+
+No. Provider-neutral adapters and bridges are part of the architecture.
+
+### Does an agent automatically get permission to change the system?
+
+No. Context access and authority are intentionally separate. Proposals, policies, quality gates and approval can be enforced.
+
+### Is token reduction the main purpose of Skein?
+
+No. Context reduction is an optimization. The broader goal is contextual, traceable, measurable and governable AI-driven engineering.
+
+### What is the single biggest idea behind Skein?
+
+**The continuous thread.** Requirements, code, tests, decisions, agent actions, quality signals and approvals should remain connected across the lifecycle.
 
 ---
 
-# Repository structure
+# 🚫 What Skein Is Not
+
+| Skein is not | What Skein does instead |
+|---|---|
+| ❌ Another coding agent | Provides the engineering layer around agents |
+| ❌ Just a RAG framework | Adds graph-native engineering context and traceability |
+| ❌ Just a graph database | Connects graph state to agents, execution, quality and evidence |
+| ❌ An LLM wrapper | Remains provider-neutral |
+| ❌ A CI/CD replacement | Connects AI-DLC lifecycle and quality evidence to engineering workflows |
+| ❌ A silent autonomous production changer | Uses bounded execution, policy and explicit lifecycle controls |
+
+---
+
+# 🎯 The Vision
+
+Software engineering is moving from:
 
 ```text
-skein/
-├── skein/                    # Core Python implementation
-│   ├── control_plane.py      # v1.0 AI-DLC lifecycle
-│   ├── autonomous_loop.py    # v0.9 quality loop
-│   ├── context_intelligence.py # v0.8 adaptive selection
-│   ├── provider_bridges.py   # Provider execution bridges
-│   ├── agent_adapters.py     # Provider-neutral adapters
-│   ├── agent_runtime.py      # Controlled execution
-│   ├── mcp/                  # MCP-compatible server
-│   ├── ingestion/            # Graph construction
-│   ├── sdd/                  # Specification / traceability
-│   ├── governance/           # Policy and sandbox controls
-│   └── assets/               # Embedded Skein branding
-├── assets/                   # Repository branding assets
-├── schemas/                  # Versioned graph/control-plane contracts
-├── spec/                     # Machine-readable SDD clauses
-├── tests/                    # Automated tests
-├── eval/                     # Evaluation fixtures
-├── docs/                     # Architecture and release documentation
-├── packages/                 # Protocol/package artifacts
-├── benchmarks/               # Benchmark fixtures and results
-└── README.md
+Human → IDE → Code
 ```
 
----
+toward:
 
-# Design principles
+```text
+Human
+  ↓
+AI Agents
+  ↓
+Multi-Agent Engineering
+  ↓
+Autonomous Workflows
+  ↓
+AI-Driven Software Lifecycle
+```
 
-### 1. Context is an engineering asset
+As autonomy increases, **context, evidence and governance become more important—not less.**
 
-Context should be structured, queryable, versioned and reusable.
+Skein is built for that transition.
 
-### 2. The graph is not the product by itself
-
-The value comes from connecting graph knowledge to agent workflows, traceability and evidence.
-
-### 3. Agents should be replaceable
-
-Skein remains provider- and agent-neutral rather than hard-coding the architecture around one model vendor.
-
-### 4. Governance is part of execution
-
-Approval, identity, auditability and policy controls exist alongside agent capabilities.
-
-### 5. Evidence must be reproducible
-
-Experiments and control-plane runs record enough provenance to understand how an outcome was produced and whether evidence was altered.
-
-### 6. Do not confuse optimization with quality
-
-Reducing tokens is useful only if engineering outcomes remain acceptable or improve.
-
-### 7. Skein should be able to say “I don't know”
-
-Missing telemetry, insufficient sample sizes and unresolved confounds remain visible rather than being converted into optimistic claims.
+> **Not another agent.**
+>
+> **Not another chatbot.**
+>
+> **Not another RAG library.**
+>
+> **The continuous engineering thread underneath AI-DLC.**
 
 ---
 
-# Contributing
+# 🧵 Skein
+
+<p align="center">
+  <strong>The Continuous Thread of AI-DLC</strong><br/>
+  Graph · Context · Trace · Agent Communication · Governance · Evidence
+</p>
+
+<p align="center"><em>One strand. End to end.</em></p>
+
+---
+
+## 🤝 Contributing
 
 Skein is intended to evolve as an open engineering project.
 
-Start with `CONTRIBUTING.md`, review the relevant design documentation under `docs/`, and add tests for behavioral changes.
+Contributions are especially welcome in:
 
-Contributions are particularly valuable in:
-
-- graph ingestion
-- language/framework parsers
-- agent adapters
+- Graph ingestion and language parsers
+- Agent adapters
 - MCP integrations
-- IDE/client integrations
-- evaluation datasets
-- experimental methodology
-- governance policies
-- benchmarks
-- enterprise connectors
-- documentation
+- IDE integrations
+- Evaluation datasets
+- Experimental methodology
+- Governance policies
+- Benchmarks
+- Enterprise connectors
+- Documentation
+
+See `CONTRIBUTING.md` for contribution guidelines.
 
 ---
 
-# The idea in one sentence
+## 📄 License
 
-> **Skein is the continuous thread that connects engineering knowledge, agent context, agent communication, traceability, governance and evidence across the AI-driven software lifecycle.**
-
----
-
-## License
-
-See the repository license and contribution documentation for the current project terms.
+MIT
