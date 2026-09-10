@@ -1,0 +1,14 @@
+id: SKN-002
+statement: >-
+  A graph version comparison shall report added, removed, and modified nodes and
+  edges, including confidence changes, without requiring a full graph snapshot diff.
+origin: greenfield
+tier: A
+evidence:
+  - type: stage_requirement
+    ref: docs/stage-2.md
+    status: confirmed
+owner: skein-core
+test_ref: tests/unit/test_sdd_contract.py
+success_metric: 100% of benchmarked graph mutations are classified deterministically.
+validation_plan: Execute golden graph-diff fixtures in CI.

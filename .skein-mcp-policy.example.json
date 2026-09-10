@@ -1,0 +1,18 @@
+{
+  "identities": {
+    "planner-1": "planner",
+    "coder-1": "coder",
+    "tester-1": "tester",
+    "reviewer-1": "reviewer",
+    "audit-1": "auditor",
+    "local-admin": "admin"
+  },
+  "roles": {
+    "planner": ["read_graph", "read_trace", "propose"],
+    "coder": ["read_graph", "read_trace", "propose"],
+    "tester": ["read_graph", "read_trace", "propose"],
+    "reviewer": ["read_graph", "read_trace", "propose", "commit"],
+    "auditor": ["read_graph", "read_trace", "read_cost", "export_audit"],
+    "admin": ["read_graph", "read_trace", "read_cost", "export_audit", "propose", "commit"]
+  }
+}

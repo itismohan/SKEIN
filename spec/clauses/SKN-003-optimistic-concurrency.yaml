@@ -1,0 +1,14 @@
+id: SKN-003
+statement: >-
+  Concurrent graph writes shall use optimistic concurrency and reject stale writes
+  while preserving a complete conflict record.
+origin: greenfield
+tier: B
+evidence:
+  - type: design_hypothesis
+    ref: docs/stage-2.md
+    status: pending
+review_date: 2026-10-15
+owner: skein-core
+success_metric: 100% of stale-write simulations are rejected with a persisted conflict record.
+validation_plan: Run deterministic two-writer concurrency tests before Stage 2 release.

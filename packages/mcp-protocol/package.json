@@ -1,0 +1,12 @@
+{
+  "name": "@skein-ai/mcp-protocol",
+  "version": "0.7.0",
+  "description": "Protocol schemas and interoperability metadata for Skein MCP integrations.",
+  "private": false,
+  "license": "Apache-2.0",
+  "files": [
+    "README.md",
+    "package.json",
+    "schemas"
+  ]
+}

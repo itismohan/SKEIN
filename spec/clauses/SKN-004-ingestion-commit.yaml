@@ -1,0 +1,14 @@
+id: SKN-004
+statement: >-
+  Repository ingestion shall apply graph mutations through the SDD-governed
+  versioned commit pipeline and shall not publish an uncommitted graph state.
+origin: greenfield
+tier: A
+evidence:
+  - type: architecture_requirement
+    ref: docs/stage-2-sdd-traceability.md
+    status: confirmed
+owner: skein-core
+test_ref: tests/integration/test_ingestion_commit_pipeline.py
+success_metric: 100% of changed ingestion runs produce a versioned commit before graph state is published.
+validation_plan: Run changed and unchanged ingestion scenarios in CI and verify commit/history alignment.

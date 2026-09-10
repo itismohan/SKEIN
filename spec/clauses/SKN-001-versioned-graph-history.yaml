@@ -1,0 +1,17 @@
+id: SKN-001
+statement: >-
+  Every accepted graph mutation in Stage 2 shall be recorded as an append-only
+  graph commit with a unique version identifier and a parent pointer.
+origin: greenfield
+tier: A
+evidence:
+  - type: stage_requirement
+    ref: docs/stage-2.md
+    status: confirmed
+  - type: architecture_decision
+    ref: spec/clauses/SKN-001-versioned-graph-history.yaml
+    status: confirmed
+owner: skein-core
+test_ref: tests/unit/test_sdd_contract.py
+success_metric: 100% of accepted mutations have commit_id and parent_version metadata.
+validation_plan: Verify commit metadata and append-only behavior in unit and integration tests.

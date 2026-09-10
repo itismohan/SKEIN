@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://skein.dev/schema/graph/v1.0.0",
+  "title": "Skein Graph Schema",
+  "description": "Versioned contract for Skein graph nodes and edges.",
+  "type": "object",
+  "required": ["schema_version", "nodes", "edges"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    },
+    "edges": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/edge"}
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {"enum": ["File", "Function", "Class", "Requirement", "Ticket", "ADR", "TestCase"]},
+        "attributes": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "required": ["source", "target", "type", "attributes"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "type": {"enum": ["CALLS", "IMPORTS", "JUSTIFIES", "TESTS", "EXTRACTED", "INFERRED"]},
+        "attributes": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

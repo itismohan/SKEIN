@@ -1,0 +1,16 @@
+id: SKN-007
+statement: >
+  Shared-agent graph access shall expose query, subgraph, traceability and
+  structural-diff reads while enforcing identity-scoped writes and preserving
+  conflict records for concurrent mutations.
+origin: greenfield
+tier: B
+status: active
+review_date: 2026-10-15
+owner: skein
+success_metric: >
+  Three-agent reference workflow completes with zero out-of-scope writes and
+  duplicate context-building calls reduced by at least 50 percent.
+validation_plan: >
+  Run the reference harness against shared-graph and independent-context
+  baselines and promote to Tier A when results are reproducible.

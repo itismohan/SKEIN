@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://skein-ai.dev/schemas/mcp-tools-0.3.0.json",
+  "title": "Skein MCP Tool Manifest",
+  "type": "object",
+  "required": ["protocolVersion", "tools"],
+  "properties": {
+    "protocolVersion": {"type": "string"},
+    "tools": {"type": "array", "items": {"type": "object", "required": ["name", "description", "inputSchema"]}}
+  }
+}

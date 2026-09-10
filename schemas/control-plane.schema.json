@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://skein.dev/schemas/control-plane/1.0.0",
+  "title": "Skein AI-DLC Control Plane Run",
+  "type": "object",
+  "required": ["run_id", "schema_version", "task", "state", "created_at", "updated_at"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "schema_version": {"const": "1.0.0"},
+    "state": {"enum": ["created", "planned", "executing", "evaluating", "approval_required", "approved", "completed", "rejected", "failed", "cancelled"]},
+    "task": {
+      "type": "object",
+      "required": ["task_id", "title", "description", "spec_refs", "risk", "required_approval"],
+      "properties": {
+        "task_id": {"type": "string"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "spec_refs": {"type": "array", "items": {"type": "string"}},
+        "risk": {"enum": ["low", "medium", "high", "critical"]},
+        "required_approval": {"type": "boolean"}
+      }
+    }
+  }
+}

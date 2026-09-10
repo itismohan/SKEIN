@@ -1,0 +1,962 @@
+[
+  {
+    "id": "EVAL-001",
+    "category": "security",
+    "text": "Case 0: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-002",
+    "category": "error",
+    "text": "Case 1: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-003",
+    "category": "edge",
+    "text": "Case 2: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-004",
+    "category": "security",
+    "text": "Case 3: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-005",
+    "category": "error",
+    "text": "Case 4: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-006",
+    "category": "edge",
+    "text": "Case 5: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-007",
+    "category": "security",
+    "text": "Case 6: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-008",
+    "category": "error",
+    "text": "Case 7: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-009",
+    "category": "edge",
+    "text": "Case 8: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-010",
+    "category": "security",
+    "text": "Case 9: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-011",
+    "category": "error",
+    "text": "Case 10: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-012",
+    "category": "edge",
+    "text": "Case 11: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-013",
+    "category": "security",
+    "text": "Case 12: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-014",
+    "category": "error",
+    "text": "Case 13: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-015",
+    "category": "edge",
+    "text": "Case 14: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-016",
+    "category": "security",
+    "text": "Case 15: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-017",
+    "category": "error",
+    "text": "Case 16: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-018",
+    "category": "edge",
+    "text": "Case 17: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-019",
+    "category": "security",
+    "text": "Case 18: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-020",
+    "category": "error",
+    "text": "Case 19: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-021",
+    "category": "edge",
+    "text": "Case 20: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-022",
+    "category": "security",
+    "text": "Case 21: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-023",
+    "category": "error",
+    "text": "Case 22: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-024",
+    "category": "edge",
+    "text": "Case 23: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-025",
+    "category": "security",
+    "text": "Case 24: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-026",
+    "category": "error",
+    "text": "Case 25: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-027",
+    "category": "edge",
+    "text": "Case 26: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-028",
+    "category": "security",
+    "text": "Case 27: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-029",
+    "category": "error",
+    "text": "Case 28: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-030",
+    "category": "edge",
+    "text": "Case 29: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-031",
+    "category": "security",
+    "text": "Case 30: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-032",
+    "category": "error",
+    "text": "Case 31: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-033",
+    "category": "edge",
+    "text": "Case 32: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-034",
+    "category": "security",
+    "text": "Case 33: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-035",
+    "category": "error",
+    "text": "Case 34: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-036",
+    "category": "edge",
+    "text": "Case 35: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-037",
+    "category": "security",
+    "text": "Case 36: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-038",
+    "category": "error",
+    "text": "Case 37: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-039",
+    "category": "edge",
+    "text": "Case 38: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-040",
+    "category": "security",
+    "text": "Case 39: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-041",
+    "category": "error",
+    "text": "Case 40: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-042",
+    "category": "edge",
+    "text": "Case 41: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-043",
+    "category": "security",
+    "text": "Case 42: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-044",
+    "category": "error",
+    "text": "Case 43: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-045",
+    "category": "edge",
+    "text": "Case 44: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-046",
+    "category": "security",
+    "text": "Case 45: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-047",
+    "category": "error",
+    "text": "Case 46: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-048",
+    "category": "edge",
+    "text": "Case 47: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-049",
+    "category": "security",
+    "text": "Case 48: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-050",
+    "category": "error",
+    "text": "Case 49: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-051",
+    "category": "edge",
+    "text": "Case 50: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-052",
+    "category": "security",
+    "text": "Case 51: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-053",
+    "category": "error",
+    "text": "Case 52: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-054",
+    "category": "edge",
+    "text": "Case 53: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-055",
+    "category": "security",
+    "text": "Case 54: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-056",
+    "category": "error",
+    "text": "Case 55: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-057",
+    "category": "edge",
+    "text": "Case 56: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-058",
+    "category": "security",
+    "text": "Case 57: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-059",
+    "category": "error",
+    "text": "Case 58: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-060",
+    "category": "edge",
+    "text": "Case 59: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-061",
+    "category": "security",
+    "text": "Case 60: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-062",
+    "category": "error",
+    "text": "Case 61: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-063",
+    "category": "edge",
+    "text": "Case 62: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-064",
+    "category": "security",
+    "text": "Case 63: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-065",
+    "category": "error",
+    "text": "Case 64: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-066",
+    "category": "edge",
+    "text": "Case 65: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-067",
+    "category": "security",
+    "text": "Case 66: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-068",
+    "category": "error",
+    "text": "Case 67: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-069",
+    "category": "edge",
+    "text": "Case 68: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-070",
+    "category": "security",
+    "text": "Case 69: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-071",
+    "category": "error",
+    "text": "Case 70: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-072",
+    "category": "edge",
+    "text": "Case 71: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-073",
+    "category": "security",
+    "text": "Case 72: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-074",
+    "category": "error",
+    "text": "Case 73: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-075",
+    "category": "edge",
+    "text": "Case 74: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-076",
+    "category": "security",
+    "text": "Case 75: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-077",
+    "category": "error",
+    "text": "Case 76: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-078",
+    "category": "edge",
+    "text": "Case 77: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-079",
+    "category": "security",
+    "text": "Case 78: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-080",
+    "category": "error",
+    "text": "Case 79: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-081",
+    "category": "edge",
+    "text": "Case 80: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-082",
+    "category": "security",
+    "text": "Case 81: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-083",
+    "category": "error",
+    "text": "Case 82: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-084",
+    "category": "edge",
+    "text": "Case 83: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-085",
+    "category": "security",
+    "text": "Case 84: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-086",
+    "category": "error",
+    "text": "Case 85: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-087",
+    "category": "edge",
+    "text": "Case 86: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-088",
+    "category": "security",
+    "text": "Case 87: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-089",
+    "category": "error",
+    "text": "Case 88: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-090",
+    "category": "edge",
+    "text": "Case 89: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-091",
+    "category": "security",
+    "text": "Case 90: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-092",
+    "category": "error",
+    "text": "Case 91: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-093",
+    "category": "edge",
+    "text": "Case 92: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-094",
+    "category": "security",
+    "text": "Case 93: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-095",
+    "category": "error",
+    "text": "Case 94: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-096",
+    "category": "edge",
+    "text": "Case 95: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-097",
+    "category": "security",
+    "text": "Case 96: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-098",
+    "category": "error",
+    "text": "Case 97: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-099",
+    "category": "edge",
+    "text": "Case 98: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-100",
+    "category": "security",
+    "text": "Case 99: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-101",
+    "category": "error",
+    "text": "Case 100: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-102",
+    "category": "edge",
+    "text": "Case 101: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-103",
+    "category": "security",
+    "text": "Case 102: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-104",
+    "category": "error",
+    "text": "Case 103: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-105",
+    "category": "edge",
+    "text": "Case 104: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-106",
+    "category": "security",
+    "text": "Case 105: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-107",
+    "category": "error",
+    "text": "Case 106: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-108",
+    "category": "edge",
+    "text": "Case 107: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-109",
+    "category": "security",
+    "text": "Case 108: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-110",
+    "category": "error",
+    "text": "Case 109: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-111",
+    "category": "edge",
+    "text": "Case 110: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-112",
+    "category": "security",
+    "text": "Case 111: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-113",
+    "category": "error",
+    "text": "Case 112: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-114",
+    "category": "edge",
+    "text": "Case 113: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-115",
+    "category": "security",
+    "text": "Case 114: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-116",
+    "category": "error",
+    "text": "Case 115: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-117",
+    "category": "edge",
+    "text": "Case 116: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  },
+  {
+    "id": "EVAL-118",
+    "category": "security",
+    "text": "Case 117: never expose credentials or secrets. The implementation should be concise.",
+    "must_contain": [
+      "credentials"
+    ]
+  },
+  {
+    "id": "EVAL-119",
+    "category": "error",
+    "text": "Case 118: handle PaymentError and HTTP 429 without hiding the failure. The implementation should be concise.",
+    "must_contain": [
+      "PaymentError"
+    ]
+  },
+  {
+    "id": "EVAL-120",
+    "category": "edge",
+    "text": "Case 119: preserve the timeout fallback and idempotency boundary. The implementation should be concise.",
+    "must_contain": [
+      "timeout"
+    ]
+  }
+]

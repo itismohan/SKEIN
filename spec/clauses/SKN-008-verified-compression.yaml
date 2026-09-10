@@ -1,0 +1,14 @@
+id: SKN-008
+statement: >
+  Compression shall never publish output when a load-bearing checklist item
+  is missing; verification failure shall re-expand or fall back to the
+  uncompressed response.
+origin: greenfield
+tier: A
+status: active
+evidence:
+  - type: executable_test
+    ref: tests/unit/test_compression.py
+review_date: 2026-12-31
+owner: skein
+test_ref: tests/unit/test_compression.py

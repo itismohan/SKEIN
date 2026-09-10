@@ -1,0 +1,13 @@
+id: SKN-006
+statement: >
+  Repository ingestion shall publish graph mutations only through the
+  SDD-governed versioned commit pipeline.
+origin: greenfield
+tier: A
+status: active
+evidence:
+  - type: executable_test
+    ref: tests/integration/test_ingestion_commit_pipeline.py
+review_date: 2026-12-31
+owner: skein
+test_ref: tests/integration/test_ingestion_commit_pipeline.py

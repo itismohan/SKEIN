@@ -1,0 +1,15 @@
+id: SKN-005
+statement: >
+  Every accepted graph mutation shall retain traceability from the governing
+  SDD clause through executable evidence to the resulting graph commit and
+  affected graph elements.
+origin: greenfield
+tier: A
+status: active
+evidence:
+  - type: executable_test
+    ref: tests/unit/test_sdd_traceability.py
+review_date: 2026-12-31
+owner: skein
+
+test_ref: tests/unit/test_sdd_traceability.py
